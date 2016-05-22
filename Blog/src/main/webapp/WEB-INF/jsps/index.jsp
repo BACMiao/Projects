@@ -1,9 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Black
-  Date: 2016/4/24
-  Time: 21:00
-  To change this template use File | Settings | File Templates.
+  Date: 2016/5/21
+  Time: 12:34
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -11,6 +10,7 @@
     <title>Title</title>
 </head>
 <body>
-<h2>你好，世界！</h2>
+    <a href="#">注册</a>
+    <a href="#">登录</a>
 </body>
 </html>
