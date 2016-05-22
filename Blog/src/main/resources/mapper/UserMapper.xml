@@ -3,8 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace 命名空间，作用就是对sql进行分类化管理-->
-<mapper namespace="User">
+<mapper namespace="user">
     <select id="findUserById" parameterType="int" resultType="com.blog.model.User">
-        SELECT * FROM blog WHERE id=#{id}
+        SELECT * FROM user WHERE id=#{id}
     </select>
 </mapper>

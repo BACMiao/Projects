@@ -25,8 +25,8 @@ public class UserTest {
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        User user = sqlSession.selectOne("User.findUserById", 1);
-        System.out.println(user);
+        User user = sqlSession.selectOne("user.findUserById", 1);
+        System.out.println(user.getUsername());
         sqlSession.close();
     }
 
