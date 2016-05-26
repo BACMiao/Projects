@@ -5,6 +5,30 @@
 <!-- namespace 命名空间，作用就是对sql进行分类化管理-->
 <mapper namespace="user">
     <select id="findUserById" parameterType="int" resultType="com.blog.model.User">
-        SELECT * FROM user WHERE id=#{id}
+        SELECT * FROM user WHERE uid=#{uid}
     </select>
+
+    <!-- 根据用户名称模糊查询用户信息，${value}接收输入参数内容，如果传入参数是简单类型，${}中只能使用value-->
+    <select id="findUserByName" parameterType="java.lang.String" resultType="com.blog.model.User">
+        SELECT * FROM user WHERE username LIKE '%${value}%'
+    </select>
+
+    <!-- 增加用户，parameterType：指定的输入参数类型是model，#{}中指定model的属性名（OGNL来获取）-->
+    <insert id="insertUser" parameterType="com.blog.model.User">
+        <!-- LAST_INSERT_ID()：得到刚insert进去的主键值-->
+        <selectKey keyProperty="uid" order="AFTER" resultType="int">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO user(uid,username, password, email, sex, birthday) VALUES (#{uid},#{username},#{password},#{email},#{sex},#{birthday})
+    </insert>
+    
+    <delete id="deleteUserById" parameterType="int">
+        DELETE FROM user WHERE uid=#{uid}
+    </delete>
+
+    <!-- parameterType 指定user对象，包括id和更新信息，注意 id必须存在-->
+    <update id="updateUserById" parameterType="com.blog.model.User">
+        UPDATE user SET username=(#{username}), password=(#{password}), email=(#{email}), sex=(#{sex}), birthday=(#{birthday}) WHERE uid=#{uid}
+    </update>
+
 </mapper>
