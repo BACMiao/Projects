@@ -8,12 +8,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
 /**
- * PACKAGE_NAME
+ *
  * Created by Black on 2016/5/26.
  */
 public class UserDaoTest {
@@ -31,11 +30,12 @@ public class UserDaoTest {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserDao userDao = sqlSession.getMapper(UserDao.class);
         User user = userDao.findUserById(2);
+        System.out.println(user.getUsername());
         sqlSession.close();
     }
 
     @Test
-    public void findUserByName() throws Exception {
+    public void testFindUserByName() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserDao userDao = sqlSession.getMapper(UserDao.class);
         List<User> list = userDao.findUserByName("陈");
@@ -44,10 +44,10 @@ public class UserDaoTest {
     }
 
     @Test
-    public void insertUser() throws Exception {
+    public void testInsertUser() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         User user = new User();
-        user.setUsername("张三");
+        user.setUsername("李四");
         user.setPassword("123");
         user.setEmail("123456@qq.com");
         user.setSex(1);
@@ -60,7 +60,7 @@ public class UserDaoTest {
     }
 
     @Test
-    public void deleteUserById() throws Exception {
+    public void testDeleteUserById() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserDao userDao = sqlSession.getMapper(UserDao.class);
         userDao.deleteUserById(13);
@@ -70,7 +70,7 @@ public class UserDaoTest {
     }
 
     @Test
-    public void updateUserById() throws Exception {
+    public void testUpdateUserById() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         User user = new User();
         user.setUid(2);
