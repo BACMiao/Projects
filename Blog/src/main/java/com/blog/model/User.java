@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * Created by Black on 2016/5/21.
- */
+ **/
 public class User {
     private int uid;
     private String username;
