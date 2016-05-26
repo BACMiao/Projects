@@ -1,3 +1,4 @@
+import com.blog.dao.UserDao;
 import com.blog.model.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -12,44 +13,46 @@ import java.io.InputStream;
 import java.util.List;
 
 /**
- * Created by Black on 2016/5/22.
+ * PACKAGE_NAME
+ * Created by Black on 2016/5/26.
  */
-public class UserTest {
+public class UserDaoTest {
     private SqlSessionFactory sqlSessionFactory;
     @Before
     public void before() throws Exception {
-        //为什么不让SqlSession 在before中创建，因为那样将使线程不安全
         String resource = "SqlMapConfig.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
     }
 
     @Test
-    public void testFindUserById() throws IOException {
+    public void testFindUserById() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        //第一个参数：namespace+"."+statement的id
-        User user = sqlSession.selectOne("com.blog.dao.UserDao.findUserById", 2);
-        System.out.println(user.getUsername());
+        UserDao userDao = sqlSession.getMapper(UserDao.class);
+        User user = userDao.findUserById(2);
         sqlSession.close();
     }
 
     @Test
-    public void testFindUserByName() throws IOException {
+    public void findUserByName() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        List<User> list = sqlSession.selectList("com.blog.dao.UserDao.findUserByName", "陈");
+        UserDao userDao = sqlSession.getMapper(UserDao.class);
+        List<User> list = userDao.findUserByName("陈");
         System.out.println(list);
         sqlSession.close();
     }
 
     @Test
-    public void testInsertUser() throws IOException {
+    public void insertUser() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         User user = new User();
         user.setUsername("张三");
         user.setPassword("123");
         user.setEmail("123456@qq.com");
         user.setSex(1);
-        sqlSession.insert("com.blog.dao.UserDao.insertUser", user);
+        UserDao userDao = sqlSession.getMapper(UserDao.class);
+        userDao.insertUser(user);
         System.out.println(user.getUid());
         //执行提交事务
         sqlSession.commit();
@@ -57,16 +60,17 @@ public class UserTest {
     }
 
     @Test
-    public void testDeleteUserById() throws IOException {
+    public void deleteUserById() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        sqlSession.delete("com.blog.dao.UserDao.deleteUserById", 13);
+        UserDao userDao = sqlSession.getMapper(UserDao.class);
+        userDao.deleteUserById(13);
         //执行提交事务
         sqlSession.commit();
         sqlSession.close();
     }
 
     @Test
-    public void testUpdateUserById() throws IOException {
+    public void updateUserById() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         User user = new User();
         user.setUid(2);
@@ -74,7 +78,8 @@ public class UserTest {
         user.setPassword("00000");
         user.setEmail("123456789@qq.com");
         user.setSex(1);
-        sqlSession.update("com.blog.dao.UserDao.updateUserById", user);
+        UserDao userDao = sqlSession.getMapper(UserDao.class);
+        userDao.updateUserById(user);
         //执行提交事务
         sqlSession.commit();
         sqlSession.close();
