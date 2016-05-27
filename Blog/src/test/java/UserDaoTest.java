@@ -30,7 +30,7 @@ public class UserDaoTest {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserDao userDao = sqlSession.getMapper(UserDao.class);
         User user = userDao.findUserById(2);
-        System.out.println(user.getUsername());
+        System.out.println(user);
         sqlSession.close();
     }
 
@@ -40,6 +40,18 @@ public class UserDaoTest {
         UserDao userDao = sqlSession.getMapper(UserDao.class);
         List<User> list = userDao.findUserByName("陈");
         System.out.println(list);
+        sqlSession.close();
+    }
+
+    @Test
+    public void findUserByList() throws Exception {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        UserDao userDao = sqlSession.getMapper(UserDao.class);
+        User user = new User();
+        user.setSex(1);
+//        user.setUsername("陈");
+        List<User> users = userDao.findUserByList(user);
+        System.out.println(users);
         sqlSession.close();
     }
 

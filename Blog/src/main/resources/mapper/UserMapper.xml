@@ -4,6 +4,14 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace 命名空间，作用就是对sql进行分类化管理-->
 <mapper namespace="com.blog.dao.UserDao">
+    <sql id="query_user_where">
+        <if test="username!=null and username!=''">
+            AND username LIKE '%${username}%'
+        </if>
+        <if test="sex!=null and sex!=''">
+            AND sex = #{sex}
+        </if>
+    </sql>
     <select id="findUserById" parameterType="int" resultType="com.blog.model.User">
         SELECT * FROM user WHERE uid=#{uid}
     </select>
@@ -30,5 +38,13 @@
     <update id="updateUserById" parameterType="com.blog.model.User">
         UPDATE user SET username=(#{username}), password=(#{password}), email=(#{email}), sex=(#{sex}), birthday=(#{birthday}) WHERE uid=#{uid}
     </update>
+
+    <select id="findUserByList" parameterType="com.blog.model.User" resultType="com.blog.model.User">
+        SELECT * FROM user
+        <!-- where 可以去掉条件中的第一个and-->
+        <where>
+            <include refid="query_user_where"></include>
+        </where>
+    </select>
 
 </mapper>
