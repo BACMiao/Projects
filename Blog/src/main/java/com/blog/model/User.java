@@ -12,8 +12,6 @@ public class User {
     private String email;
     private int sex;
     private Date birthday;
-    private String major;
-    private String address;
 
     public int getUid() {
         return uid;
@@ -63,22 +61,6 @@ public class User {
         this.birthday = birthday;
     }
 
-    public String getMajor() {
-        return major;
-    }
-
-    public void setMajor(String major) {
-        this.major = major;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     @Override
     public String toString() {
         return "User{" +
@@ -88,8 +70,6 @@ public class User {
                 ", email='" + email + '\'' +
                 ", sex=" + sex +
                 ", birthday=" + birthday +
-                ", major='" + major + '\'' +
-                ", address='" + address + '\'' +
                 '}';
     }
 }

@@ -14,6 +14,7 @@ import java.util.List;
 /**
  *
  * Created by Black on 2016/5/26.
+ * mybatis和spring整合后，该测试用例废弃
  */
 public class UserDaoTest {
     private SqlSessionFactory sqlSessionFactory;
@@ -75,7 +76,7 @@ public class UserDaoTest {
     public void testDeleteUserById() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserDao userDao = sqlSession.getMapper(UserDao.class);
-        userDao.deleteUserById(13);
+        userDao.deleteUserById(14);
         //执行提交事务
         sqlSession.commit();
         sqlSession.close();
@@ -88,7 +89,7 @@ public class UserDaoTest {
         user.setUid(2);
         user.setUsername("陈淼");
         user.setPassword("00000");
-        user.setEmail("123456789@qq.com");
+        user.setEmail("100000@qq.com");
         user.setSex(1);
         UserDao userDao = sqlSession.getMapper(UserDao.class);
         userDao.updateUserById(user);

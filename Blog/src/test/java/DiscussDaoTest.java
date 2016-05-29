@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * Created by Black on 2016/5/28.
+ * mybatis和spring整合后，该测试用例废弃
  */
 public class DiscussDaoTest {
     private SqlSessionFactory sqlSessionFactory;
@@ -27,7 +28,7 @@ public class DiscussDaoTest {
     }
 
     @Test
-    public void findDiscussUser() throws Exception {
+    public void testFindDiscussUser() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         DiscussDao discussDao = sqlSession.getMapper(DiscussDao.class);
         List<DiscussCustom> list = discussDao.findDiscussUser();

@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * Created by Black on 2016/5/22.
- *
+ * mybatis和spring整合后，该测试用例废弃
  */
 public class UserTest {
     private SqlSessionFactory sqlSessionFactory;
