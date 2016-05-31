@@ -35,11 +35,10 @@
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
 
-
-    <!-- mapper的配置,MapperFactoryBean:根据mapper接口生成代理对象-->
-    <bean id="userDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="com.blog.dao.UserDao"/>
-        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    <!-- spring与mybatis整合配置，扫描所有dao -->
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.blog.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 
 </beans>
