@@ -3,9 +3,12 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <typeAliases>
+        <package name="com.blog.model"/>
+    </typeAliases>
 
-    <mappers>
-        <mapper resource="mapper/UserMapper.xml"/>
-        <mapper resource="mapper/DiscussMapper.xml"/>
-    </mappers>
+    <!--<mappers>-->
+        <!--<mapper resource="mapper/UserMapper.xml"/>-->
+        <!--<mapper resource="mapper/DiscussMapper.xml"/>-->
+    <!--</mappers>-->
 </configuration>

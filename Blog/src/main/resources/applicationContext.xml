@@ -31,7 +31,10 @@
         <property name="configLocation" value="SqlMapConfig.xml"/>
         <!--数据源 -->
         <property name="dataSource" ref="dataSource" />
+        <!-- 扫描所有mapper配置文件-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
+
 
     <!-- mapper的配置,MapperFactoryBean:根据mapper接口生成代理对象-->
     <bean id="userDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
