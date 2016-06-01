@@ -10,4 +10,5 @@ import com.blog.model.User;
 public interface UserService {
     public User findUserById(Integer uid) throws Exception;
     public void updateUserById(Integer uid, User user) throws Exception;
+    public void saveUser(User user) throws Exception;
 }

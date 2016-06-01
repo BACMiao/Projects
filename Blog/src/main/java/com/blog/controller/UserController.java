@@ -19,6 +19,19 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
+    @RequestMapping("/register")
+    public String register()
+    {
+        return "user/saveUser";
+    }
+
+    @RequestMapping("/saveUser")
+    public String saveUser(User user)throws Exception{
+        userService.saveUser(user);
+        return "user/success";
+    }
+
     @RequestMapping("/editUser")
     public String editUser(@RequestParam(value = "uid", required = true) Integer uid, Model model) throws Exception{
         User user = userService.findUserById(uid);
