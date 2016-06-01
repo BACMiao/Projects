@@ -5,6 +5,7 @@ import com.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -17,11 +18,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/findUser")
-    public String findUser() throws Exception {
-        User user = userService.findUserById(2);
+    @RequestMapping("/editUser")
+    public String editUser(@RequestParam(value = "uid", required = true) Integer uid) throws Exception{
+        User user = userService.findUserById(uid);
         System.out.println(user);
-        return "findUser";
+        return "user/editUser";
     }
-
 }

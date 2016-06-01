@@ -8,5 +8,6 @@ import com.blog.model.User;
  */
 
 public interface UserService {
-    public User findUserById(int uid) throws Exception;
+    public User findUserById(Integer uid) throws Exception;
+    public void updateUserById(Integer uid, User user) throws Exception;
 }

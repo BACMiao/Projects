@@ -16,8 +16,14 @@ public class UserServiceImpl implements UserService{
     private UserDao userDao;
 
     @Override
-    public User findUserById(int uid) throws Exception {
+    public User findUserById(Integer uid) throws Exception {
         return userDao.findUserById(uid);
+    }
+
+    @Override
+    public void updateUserById(Integer uid, User user) throws Exception {
+        user.setUid(uid);
+        userDao.updateUserById(user);
     }
 
     @Autowired
