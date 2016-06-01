@@ -13,7 +13,7 @@
         <mybatis.version>3.4.0</mybatis.version>
         <slf4j.version>1.7.6</slf4j.version>
         <!-- spring版本号 -->
-        <spring.version>4.1.5.RELEASE</spring.version>
+        <spring.version>4.2.4.RELEASE</spring.version>
         <!-- c3p0数据库元版本 -->
         <c3p0.version>0.9.1.2</c3p0.version>
         <!-- mybatis spring版本 -->
@@ -111,6 +111,12 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
             <version>${spring.version}</version>
         </dependency>
     </dependencies>

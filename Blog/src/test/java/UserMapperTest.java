@@ -14,13 +14,13 @@ public class UserMapperTest {
     private ApplicationContext applicationContext;
     @Before
     public void before() throws Exception {
-        applicationContext = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+        applicationContext = new ClassPathXmlApplicationContext("classpath:spring-mybatis.xml");
     }
 
     @Test
     public void testFindUserById() throws Exception{
         UserDao userDao = (UserDao) applicationContext.getBean("userDao");
-        User user = userDao.findUserById(2);
+        User user = userDao.findUserById(5);
         System.out.println(user);
     }
 }
