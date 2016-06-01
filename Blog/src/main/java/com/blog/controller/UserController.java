@@ -4,6 +4,7 @@ import com.blog.model.User;
 import com.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -19,8 +20,9 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/editUser")
-    public String editUser(@RequestParam(value = "uid", required = true) Integer uid) throws Exception{
+    public String editUser(@RequestParam(value = "uid", required = true) Integer uid, Model model) throws Exception{
         User user = userService.findUserById(uid);
+        model.addAttribute("user", user);
         System.out.println(user);
         return "user/editUser";
     }
@@ -28,6 +30,6 @@ public class UserController {
     @RequestMapping("/updateUser")
     public String updateUser(Integer uid, User user)throws Exception{
         userService.updateUserById(uid, user);
-        return "user/updateUser";
+        return "user/editUser";
     }
 }

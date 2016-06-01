@@ -17,11 +17,20 @@
                                 expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
 
-    <mvc:annotation-driven />
+    <mvc:annotation-driven conversion-service="conversionService"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
         <property name="prefix" value="/WEB-INF/jsps/" />
         <property name="suffix" value=".jsp" />
+    </bean>
+
+    <!--转换器-->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.blog.converter.CustomDateConverter"/>
+            </set>
+        </property>
     </bean>
 </beans>
