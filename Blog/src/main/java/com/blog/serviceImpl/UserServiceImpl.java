@@ -1,13 +1,10 @@
 package com.blog.serviceImpl;
 
-
 import com.blog.dao.UserDao;
 import com.blog.model.User;
 import com.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  *
