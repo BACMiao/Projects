@@ -6,9 +6,5 @@
     <typeAliases>
         <package name="com.blog.model"/>
     </typeAliases>
-
-    <!--<mappers>-->
-        <!--<mapper resource="mapper/UserMapper.xml"/>-->
-        <!--<mapper resource="mapper/DiscussMapper.xml"/>-->
-    <!--</mappers>-->
+    <!-- 由spring扫描所有mapper配置文件-->
 </configuration>
