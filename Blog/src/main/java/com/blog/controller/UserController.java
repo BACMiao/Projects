@@ -24,4 +24,10 @@ public class UserController {
         System.out.println(user);
         return "user/editUser";
     }
+
+    @RequestMapping("/updateUser")
+    public String updateUser(Integer uid, User user)throws Exception{
+        userService.updateUserById(uid, user);
+        return "user/updateUser";
+    }
 }
