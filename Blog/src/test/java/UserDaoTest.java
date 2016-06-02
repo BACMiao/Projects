@@ -39,8 +39,8 @@ public class UserDaoTest {
     public void testFindUserByName() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserDao userDao = sqlSession.getMapper(UserDao.class);
-        List<User> list = userDao.findUserByName("陈");
-        System.out.println(list);
+        User user = userDao.findUserByName("陈");
+        System.out.println(user);
         sqlSession.close();
     }
 

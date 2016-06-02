@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface UserDao {
     public User findUserById(int uid) throws Exception;
-    public List<User> findUserByName(String username) throws Exception;
+    public User findUserByName(String username) throws Exception;
     public List<User> findUserByList(User user) throws Exception;
     public void insertUser(User user) throws Exception;
     public void deleteUserById(int uid) throws  Exception;

@@ -32,6 +32,20 @@ public class UserController {
         return "user/success";
     }
 
+    @RequestMapping("/login")
+    public String login(){
+        return "user/userLogin";
+    }
+
+    @RequestMapping("/exist")
+    public String existUser(User user) throws Exception{
+        if (userService.existUser(user)){
+            return "user/success";
+        }else {
+            return "user/failure";
+        }
+    }
+
     @RequestMapping("/editUser")
     public String editUser(@RequestParam(value = "uid", required = true) Integer uid, Model model) throws Exception{
         User user = userService.findUserById(uid);

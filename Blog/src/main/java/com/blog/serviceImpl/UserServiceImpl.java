@@ -31,6 +31,19 @@ public class UserServiceImpl implements UserService{
         userDao.insertUser(user);
     }
 
+    @Override
+    public boolean existUser(User user) throws Exception {
+        if (user.getUsername()!= null && user.getUsername()!= " "){
+            User user1 = userDao.findUserByName(user.getUsername());
+            if (user1!=null){
+                if (user1.getPassword().equals(user.getPassword())){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     @Autowired
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
