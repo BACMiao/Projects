@@ -119,6 +119,20 @@
             <artifactId>spring-aspects</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.commonjava.googlecode.markdown4j</groupId>
+            <artifactId>markdown4j</artifactId>
+            <version>2.2-cj-1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.commonjava.googlecode.markdown4j</groupId>
+            <artifactId>markdown4j</artifactId>
+            <version>2.2-cj-1.0</version>
+            <classifier>sources</classifier>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
