@@ -1,6 +1,7 @@
 package com.blog.model;
 
 /**
+ *
  * Created by Black on 2016/6/4.
  */
 public class Admin {
@@ -30,5 +31,14 @@ public class Admin {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "aid=" + aid +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
