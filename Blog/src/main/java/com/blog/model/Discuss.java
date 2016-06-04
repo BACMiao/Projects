@@ -8,6 +8,8 @@ import java.util.Date;
 public class Discuss {
     private int did;
     private int userId;
+    private int articleId;
+    private int replyId;
     private String message;
     private Date createTime;
 
@@ -25,6 +27,22 @@ public class Discuss {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public int getReplyId() {
+        return replyId;
+    }
+
+    public void setReplyId(int replyId) {
+        this.replyId = replyId;
+    }
+
+    public int getArticleId() {
+        return articleId;
+    }
+
+    public void setArticleId(int articleId) {
+        this.articleId = articleId;
     }
 
     public String getMessage() {
