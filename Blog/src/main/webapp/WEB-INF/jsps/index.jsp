@@ -15,5 +15,6 @@
     <a href="/user/register">注册</a>
     <a href="/user/login">登录</a>
     <a href="/user/editUser?uid=2">编辑信息</a>
+    <a href="/admin/login">管理员登录</a>
 </body>
 </html>
