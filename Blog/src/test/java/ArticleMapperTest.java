@@ -46,9 +46,9 @@ public class ArticleMapperTest {
     public void testInsertArticle() throws Exception{
         ArticleDao articleDao = (ArticleDao) applicationContext.getBean("articleDao");
         Article article = new Article();
-        article.setTitle("mybatis的使用");
-        article.setCategoryId(2);
-        article.setArticlePath("/txt/test4.txt");
+        article.setTitle("blog的搭建");
+        article.setCategoryId(1);
+        article.setArticlePath("/txt/test.txt");
         article.setCreateTime(new Date());
         articleDao.insertArticle(article);
     }

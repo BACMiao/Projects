@@ -18,6 +18,12 @@ public class CategoryMapperTest {
     }
 
     @Test
+    public void testFindCategoryByName() throws Exception{
+        CategoryDao categoryDao = (CategoryDao) applicationContext.getBean("categoryDao");
+        System.out.println(categoryDao.findCategoryByName("blog的搭建"));
+    }
+
+    @Test
     public void testInsertCategory() throws Exception{
         CategoryDao categoryDao = (CategoryDao) applicationContext.getBean("categoryDao");
         Category category = new Category();

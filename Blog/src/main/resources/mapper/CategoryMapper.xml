@@ -3,6 +3,10 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.blog.dao.CategoryDao">
+    <select id="findCategoryByName" parameterType="java.lang.String" resultType="com.blog.model.Category">
+        SELECT * FROM  category WHERE categoryName=#{categoryName}
+    </select>
+
     <insert id="insertCategory" parameterType="com.blog.model.Category">
         INSERT INTO category(cid, categoryName) VALUES (#{cid},#{categoryName})
     </insert>
