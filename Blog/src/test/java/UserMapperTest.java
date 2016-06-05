@@ -1,5 +1,6 @@
 import com.blog.dao.UserDao;
 import com.blog.model.User;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -22,5 +23,9 @@ public class UserMapperTest {
         UserDao userDao = (UserDao) applicationContext.getBean("userDao");
         User user = userDao.findUserById(5);
         System.out.println(user);
+    }
+
+    @After
+    public void after() throws Exception {
     }
 }

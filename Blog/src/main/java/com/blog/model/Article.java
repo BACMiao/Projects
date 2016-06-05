@@ -8,6 +8,7 @@ import java.util.Date;
  */
 public class Article {
     private int id;
+    private String title;
     private Date createTime;
     private String articlePath;
     private int categoryId;
@@ -18,6 +19,14 @@ public class Article {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Date getCreateTime() {
@@ -48,6 +57,7 @@ public class Article {
     public String toString() {
         return "Article{" +
                 "id=" + id +
+                ", title='" + title + '\'' +
                 ", createTime=" + createTime +
                 ", articlePath='" + articlePath + '\'' +
                 ", categoryId=" + categoryId +
