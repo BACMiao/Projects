@@ -1,3 +1,5 @@
+package oldTest;
+
 import com.blog.dao.DiscussDao;
 import com.blog.dao.UserDao;
 import com.blog.model.DiscussCustom;

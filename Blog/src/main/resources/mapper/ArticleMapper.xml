@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- namespace 命名空间，作用就是对sql进行分类化管理-->
+
 <mapper namespace="com.blog.dao.ArticleDao">
     <sql id="query_article_where">
         <if test="title!=null and title!=''">
@@ -21,7 +21,6 @@
     </select>
 
     <insert id="insertArticle" parameterType="com.blog.model.Article">
-        <!-- LAST_INSERT_ID()：得到刚insert进去的主键值-->
         <selectKey keyProperty="id" order="AFTER" resultType="int">
             SELECT LAST_INSERT_ID()
         </selectKey>
@@ -32,14 +31,12 @@
         DELETE FROM article WHERE id=#{id}
     </delete>
 
-    <!-- parameterType 指定user对象，包括id和更新信息，注意 id必须存在-->
     <update id="updateArticleById" parameterType="com.blog.model.Article">
         UPDATE article SET title=(#{title}), createTime=(#{createTime}), categoryId=(#{categoryId}), title=(#{title}) WHERE id=#{id}
     </update>
 
     <select id="findArticleByList" parameterType="com.blog.model.Article" resultType="com.blog.model.Article">
         SELECT * FROM article
-        <!-- where 可以去掉条件中的第一个and-->
         <where>
             <include refid="query_article_where"></include>
         </where>

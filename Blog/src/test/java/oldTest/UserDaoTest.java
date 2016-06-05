@@ -1,3 +1,5 @@
+package oldTest;
+
 import com.blog.dao.UserDao;
 import com.blog.model.User;
 import org.apache.ibatis.io.Resources;
