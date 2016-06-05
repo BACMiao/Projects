@@ -1,3 +1,5 @@
+package mapperTest;
+
 import com.blog.dao.AdminDao;
 import com.blog.model.Admin;
 import org.junit.After;

@@ -9,7 +9,8 @@ public class Discuss {
     private int did;
     private int userId;
     private int articleId;
-    private int replyId;
+    private String ownId;
+    private String parentId;
     private String message;
     private Date createTime;
 
@@ -29,12 +30,20 @@ public class Discuss {
         this.userId = userId;
     }
 
-    public int getReplyId() {
-        return replyId;
+    public String getOwnId() {
+        return ownId;
     }
 
-    public void setReplyId(int replyId) {
-        this.replyId = replyId;
+    public void setOwnId(String ownId) {
+        this.ownId = ownId;
+    }
+
+    public String getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(String parentId) {
+        this.parentId = parentId;
     }
 
     public int getArticleId() {

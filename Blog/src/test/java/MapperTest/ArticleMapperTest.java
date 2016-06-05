@@ -1,3 +1,5 @@
+package mapperTest;
+
 import com.blog.dao.ArticleDao;
 import com.blog.model.Article;
 import org.junit.After;

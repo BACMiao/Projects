@@ -4,9 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.blog.dao.DiscussDao">
-    <select id="findDiscussUser" resultType="com.blog.model.DiscussCustom">
-        SELECT discuss.*, user.username FROM discuss,user WHERE discuss.userId=user.uid
-    </select>
+    <!--<select id="findDiscussUser" resultType="com.blog.model.DiscussCustom">-->
+        <!--SELECT discuss.*, user.username FROM discuss,user WHERE discuss.userId=user.uid-->
+    <!--</select>-->
 
+    <insert id="insertDiscuss" parameterType="com.blog.model.Discuss">
+        INSERT INTO discuss(did, createTime, message, userId, articleId, ownId, parentId) VALUES (#{did},#{createTime},#{message},#{userId},#{articleId},#{ownId},#{parentId})
+    </insert>
 
+    <delete id="deleteDiscussById" parameterType="int">
+        DELETE FROM discuss WHERE did=#{did}
+    </delete>
 </mapper>

@@ -1,3 +1,5 @@
+package mapperTest;
+
 import com.blog.dao.CategoryDao;
 import com.blog.model.Category;
 import org.junit.After;

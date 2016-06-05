@@ -1,4 +1,4 @@
-package markdown;
+package otherTest;
 
 import org.junit.After;
 import org.junit.Before;

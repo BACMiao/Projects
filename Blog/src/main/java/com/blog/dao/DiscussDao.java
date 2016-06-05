@@ -2,6 +2,7 @@ package com.blog.dao;
 
 import com.blog.model.Discuss;
 import com.blog.model.DiscussCustom;
+import com.blog.model.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,7 +13,6 @@ import java.util.List;
 @Repository
 public interface DiscussDao {
     public List<DiscussCustom> findDiscussUser() throws Exception;
-//    public void insertDisscuss(User user) throws Exception;
-//    public void deleteUserById(int uid) throws  Exception;
-//    public void updateUserById(User user) throws Exception;
+    public void insertDiscuss(Discuss discuss) throws Exception;
+    public void deleteDiscussById(int did) throws  Exception;
 }
