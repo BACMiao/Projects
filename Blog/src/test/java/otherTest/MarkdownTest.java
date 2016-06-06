@@ -19,7 +19,14 @@ public class MarkdownTest {
 
     @Test
     public void testMarkdown() throws IOException {
-        String html = new Markdown4jProcessor().process("> or formatting instructions.");
+        BufferedReader in = new BufferedReader(new FileReader("E:\\computer\\text.txt"));
+        String s;
+        StringBuilder sb = new StringBuilder();
+        while ((s = in.readLine()) != null){
+            sb.append(s + "\n");
+        }
+        in.close();
+        String html = new Markdown4jProcessor().process(sb.toString());
         System.out.println(html);
     }
 
