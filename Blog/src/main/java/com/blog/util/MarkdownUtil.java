@@ -9,9 +9,9 @@ import java.io.FileReader;
  *
  * Created by Black on 2016/6/6.
  */
-public class Markdown {
+public class MarkdownUtil {
 
-    public Markdown() {
+    public MarkdownUtil() {
     }
 
     public static String read(String fileName) throws Exception{

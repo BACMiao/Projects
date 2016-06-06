@@ -17,5 +17,6 @@
     <a href="/user/editUser?uid=2">编辑信息</a>
     <a href="/admin/login">管理员登录</a>
     <a href="/category/add">添加类别</a>
+    <a href="/article/add">添加文章</a>
 </body>
 </html>

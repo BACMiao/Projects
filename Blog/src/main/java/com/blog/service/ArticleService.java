@@ -8,4 +8,5 @@ import com.blog.model.Article;
  */
 public interface ArticleService {
     public void addArticle(Article article)throws Exception;
+    public boolean existArticle(String title) throws Exception;
 }

@@ -16,8 +16,23 @@ public class ArticleServiceImpl implements ArticleService {
     private ArticleDao articleDao;
 
     @Override
+    public boolean existArticle(String title) throws Exception {
+        Article article = articleDao.findArticleByTitle(title);
+        if (article!=null && article.getTitle()!=""){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public void addArticle(Article article) throws Exception {
-        articleDao.insertArticle(article);
+        if (existArticle(article.getTitle())) {
+            System.out.println("文件存在");
+        }
+        else {
+            System.out.println("上传成功");
+            articleDao.insertArticle(article);
+        }
     }
 
     public ArticleDao getArticleDao() {

@@ -1,6 +1,6 @@
 package otherTest;
 
-import com.blog.util.Markdown;
+import com.blog.util.MarkdownUtil;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,7 +33,7 @@ public class MarkdownTest {
 
     @Test
     public void testMarkdown2() throws Exception {
-        System.out.println(Markdown.read("E:\\computer\\text.txt"));
+        System.out.println(MarkdownUtil.read("E:\\computer\\text.txt"));
     }
 
     @After

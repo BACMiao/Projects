@@ -24,7 +24,7 @@ public class AdminMapperTest {
         AdminDao adminDao = (AdminDao) applicationContext.getBean("adminDao");
         Admin admin = new Admin();
         admin.setUsername("cm");
-        admin.setPassword("345335911");
+        admin.setPassword("000000");
         System.out.println(adminDao.findAdminByList(admin));
     }
 
