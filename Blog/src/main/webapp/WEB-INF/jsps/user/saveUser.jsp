@@ -12,6 +12,7 @@
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
     <title>注册</title>
+    <script type="text/javascript" src="${ctx}/resources/js/Calendar3.js"></script>
 </head>
 <body>
 <form action="/user/saveUser" method="post">
@@ -35,7 +36,8 @@
 
         <tr>
             <td>生日</td>
-            <td><input name="birthday" type="text"/></td>
+            <td><input name="birthday" type="text" onclick="new
+            Calendar().show(this);" readonly="readonly"/></td>
         </tr>
 
     </table>

@@ -19,6 +19,9 @@
 
     <mvc:annotation-driven conversion-service="conversionService"/>
 
+    <!-- 静态资源处理， css， js， imgs, **代表包括子目录 ,一定要配啊，不然导入不了，坑死我了-->
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="104857600" />
         <property name="defaultEncoding" value="UTF-8"/>
