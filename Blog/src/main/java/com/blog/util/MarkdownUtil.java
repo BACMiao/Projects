@@ -3,7 +3,9 @@ package com.blog.util;
 import org.markdown4j.Markdown4jProcessor;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.InputStreamReader;
 
 /**
  *
@@ -15,7 +17,7 @@ public class MarkdownUtil {
     }
 
     public static String read(String fileName) throws Exception{
-        BufferedReader in = new BufferedReader(new FileReader(fileName));
+        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(fileName), "UTF-8"));
         String s;
         StringBuilder sb = new StringBuilder();
         while ((s = in.readLine()) != null){

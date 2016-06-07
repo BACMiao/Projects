@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
+import java.io.PrintWriter;
 
 /**
  *
@@ -47,7 +49,7 @@ public class ArticleController {
         return "article/viewArticle";
     }
 
-    @RequestMapping("/json")
+    @RequestMapping(value="/json", produces = "text/html;charset=UTF-8")
     public @ResponseBody String jsonTest() throws Exception {
         String html = MarkdownUtil.read("E:\\computer\\text.txt");
         JSONObject article = new JSONObject();
