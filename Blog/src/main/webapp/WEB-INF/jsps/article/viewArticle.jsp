@@ -13,19 +13,14 @@
     <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
     <title>博文</title>
     <script type="text/javascript">
-        function json(){
-            $.ajax({
-                type: "POST",
-                url: "/article/json",
-                success: function(msg){
-                    alert(msg);
-                }
-            });
-        }
+        $.getJSON("/article/json",function(article){
+            msg = article.msg;
+            $("#resText").html(msg);
+        })
+
     </script>
 </head>
 <body>
-
-<input type="button" onclick="json()" value="测试"/>
+<div id="resText"></div>
 </body>
 </html>

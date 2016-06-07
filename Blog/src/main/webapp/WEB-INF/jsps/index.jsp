@@ -9,7 +9,18 @@
 <html>
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
+    <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
     <title>Title</title>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var $cr = $("#cr");
+            $cr.click(function(){
+                if ($cr.is(":checked")){
+                    alert("谢谢");
+                }
+            })
+        });
+    </script>
 </head>
 <body>
     <a href="/user/register">注册</a>
@@ -19,5 +30,7 @@
     <a href="/category/add">添加类别</a>
     <a href="/article/add">添加文章</a>
     <a href="/article/viewArticle">查看文章</a>
+<input type="checkbox" id="cr"/>
+<label for="cr">我同意上诉观点</label>
 </body>
 </html>
