@@ -3,11 +3,11 @@ package com.blog.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.blog.model.Article;
 import com.blog.service.ArticleService;
-import com.blog.util.MarkdownUtil;
 import com.blog.util.TimeUtil;
 import com.blog.util.UploadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -41,13 +41,16 @@ public class ArticleController {
     }
 
     @RequestMapping("/viewArticle")
-    public String viewArticle(){
+    public String viewArticle(@RequestParam(value = "id", required = true) Integer id,
+                              Model model){
+        model.addAttribute("ArticleId", id);
         return "article/viewArticle";
     }
 
     @RequestMapping(value="/json", produces = "text/html;charset=UTF-8")
-    public @ResponseBody String jsonTest() throws Exception {
-        String msg = MarkdownUtil.read("E:\\computer\\text.txt");
+    public @ResponseBody String jsonTest(@RequestParam(value = "id", required = true)Integer id,
+                                         HttpServletRequest request) throws Exception {
+        String msg = articleService.getArticle(id, request);
         JSONObject article = new JSONObject();
         article.put("msg", msg);
         System.out.println(article.toString());

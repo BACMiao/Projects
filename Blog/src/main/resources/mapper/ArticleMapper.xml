@@ -41,5 +41,9 @@
             <include refid="query_article_where"></include>
         </where>
     </select>
+    
+    <select id="findAllArticle" resultType="com.blog.model.Article">
+        SELECT * FROM article ORDER BY createTime DESC
+    </select>
 
 </mapper>

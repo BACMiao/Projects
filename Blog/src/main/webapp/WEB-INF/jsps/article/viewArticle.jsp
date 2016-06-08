@@ -13,7 +13,8 @@
     <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
     <title>博文</title>
     <script type="text/javascript">
-        $.getJSON("/article/json",function(article){
+        url = "/article/json?id=" + ${ArticleId};
+        $.getJSON(url,function(article){
             msg = article.msg;
             $("#resText").html(msg);
         })

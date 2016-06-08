@@ -29,8 +29,12 @@
     <a href="/admin/login">管理员登录</a>
     <a href="/category/add">添加类别</a>
     <a href="/article/add">添加文章</a>
-    <a href="/article/viewArticle">查看文章</a>
-<input type="checkbox" id="cr"/>
-<label for="cr">我同意上诉观点</label>
+
+<div>
+    <c:forEach var="article" items="${articles}" >
+        <a href="/article/viewArticle?id=${article.id}">${article.categoryId}&nbsp;&nbsp;${article.title}&nbsp;&nbsp;${article.createTime}</a>
+        <br>
+    </c:forEach>
+</div>
 </body>
 </html>

@@ -33,8 +33,8 @@ public class UploadUtil {
                 }
                 path += s;
             }
-            String picPath = path +"\\src\\main\\webapp\\resources\\article\\" + newFileName;
-            File newfile = new File(picPath);
+            String articlePath = path +"\\src\\main\\webapp\\resources\\article\\" + newFileName;
+            File newfile = new File(articlePath);
             if (!newfile.exists())
                 newfile.mkdirs();
             file.transferTo(newfile);
