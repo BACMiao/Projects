@@ -42,13 +42,14 @@ public class ArticleController {
 
     @RequestMapping("/viewArticle")
     public String viewArticle(@RequestParam(value = "id", required = true) Integer id,
-                              Model model){
-        model.addAttribute("ArticleId", id);
+                              Model model) throws Exception {
+        Article article = articleService.selectArticleById(id);
+        model.addAttribute("article", article);
         return "article/viewArticle";
     }
 
     @RequestMapping(value="/json", produces = "text/html;charset=UTF-8")
-    public @ResponseBody String jsonTest(@RequestParam(value = "id", required = true)Integer id,
+    public @ResponseBody String jsonArticle(@RequestParam(value = "id", required = true)Integer id,
                                          HttpServletRequest request) throws Exception {
         String msg = articleService.getArticle(id, request);
         JSONObject article = new JSONObject();

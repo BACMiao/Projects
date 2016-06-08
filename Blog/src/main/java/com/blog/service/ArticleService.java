@@ -14,4 +14,5 @@ public interface ArticleService {
     public boolean existArticle(String title) throws Exception;
     public String getArticle(Integer id, HttpServletRequest request) throws Exception;
     public List<Article> selectAllArticle()throws Exception;
+    public Article selectArticleById(Integer id) throws Exception;
 }

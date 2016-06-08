@@ -72,6 +72,12 @@ public class ArticleMapperTest {
         articleDao.updateArticleById(article);
     }
 
+    @Test
+    public void testFindAllArticle() throws Exception{
+        ArticleDao articleDao = (ArticleDao) applicationContext.getBean("articleDao");
+        System.out.println(articleDao.findAllArticle());
+    }
+
 
 
     @After

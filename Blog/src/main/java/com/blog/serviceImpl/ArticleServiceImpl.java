@@ -59,6 +59,11 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
+    public Article selectArticleById(Integer id) throws Exception {
+        return articleDao.findArticleById(id);
+    }
+
+    @Override
     public void addArticle(Article article) throws Exception {
         if (existArticle(article.getTitle())) {
             System.out.println("文件存在");

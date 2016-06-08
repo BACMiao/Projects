@@ -11,17 +11,20 @@
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
     <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
-    <title>博文</title>
+    <title>${article.title}</title>
     <script type="text/javascript">
-        url = "/article/json?id=" + ${ArticleId};
+        url = "/article/json?id=" + ${article.id};
         $.getJSON(url,function(article){
             msg = article.msg;
-            $("#resText").html(msg);
+            $("#Article").html(msg);
         })
 
     </script>
 </head>
 <body>
-<div id="resText"></div>
+<div id="Article"></div>
+<div id="Discuss">
+    <a href="#">评论</a>
+</div>
 </body>
 </html>
