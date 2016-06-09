@@ -24,7 +24,15 @@
 <body>
 <div id="Article"></div>
 ${sessionScope.user.username}
+
+<div id="viewDiscuss">
+    <c:forEach var="discuss" items="${discuss}" >
+        ${discuss.username}&nbsp;&nbsp;${discuss.createTime}<br/>
+        ${discuss.message}<br/>
+    </c:forEach>
+</div>
 <div id="Discuss">
+
     <form action="/discuss/add?articleId=${article.id}" method="post">
         <textarea id="message" name="message"></textarea>
         <input type="submit" value="评论">

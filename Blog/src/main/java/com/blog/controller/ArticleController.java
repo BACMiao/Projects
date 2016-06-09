@@ -2,7 +2,9 @@ package com.blog.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.blog.model.Article;
+import com.blog.model.DiscussCustom;
 import com.blog.service.ArticleService;
+import com.blog.service.DiscussService;
 import com.blog.util.TimeUtil;
 import com.blog.util.UploadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  *
@@ -25,6 +28,8 @@ public class ArticleController {
 
     @Autowired
     private ArticleService articleService;
+    @Autowired
+    private DiscussService discussService;
 
     @RequestMapping("/add")
     public String add(){
@@ -44,6 +49,8 @@ public class ArticleController {
     public String viewArticle(@RequestParam(value = "id", required = true) Integer id,
                               Model model) throws Exception {
         Article article = articleService.selectArticleById(id);
+        List<DiscussCustom> discuss = discussService.getAllDiscuss(id);
+        model.addAttribute("discuss", discuss);
         model.addAttribute("article", article);
         return "article/viewArticle";
     }

@@ -33,7 +33,7 @@ public class DiscussDaoTest {
     public void testFindDiscussUser() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         DiscussDao discussDao = sqlSession.getMapper(DiscussDao.class);
-        List<DiscussCustom> list = discussDao.findDiscussUser();
+        List<DiscussCustom> list = discussDao.findDiscussUser(4);
         System.out.println(list);
         sqlSession.close();
     }

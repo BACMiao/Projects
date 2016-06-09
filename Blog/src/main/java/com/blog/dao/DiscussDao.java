@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Repository
 public interface DiscussDao {
-    public List<DiscussCustom> findDiscussUser() throws Exception;
+    public List<DiscussCustom> findDiscussUser(Integer articleId) throws Exception;
     public void insertDiscuss(Discuss discuss) throws Exception;
-    public void deleteDiscussById(int did) throws  Exception;
+    public void deleteDiscussById(Integer did) throws  Exception;
 }

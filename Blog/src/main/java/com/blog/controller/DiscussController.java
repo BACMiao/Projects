@@ -24,6 +24,6 @@ public class DiscussController {
     public String addDiscuss(Discuss discuss, HttpSession session,
                              @RequestParam(value = "articleId") Integer articleId) throws Exception{
         discussService.addDiscuss(discuss, session, articleId);
-        return "article/viewArticle";
+        return "redirect:/article/viewArticle?id=" + articleId;
     }
 }

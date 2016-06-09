@@ -1,8 +1,10 @@
 package com.blog.service;
 
 import com.blog.model.Discuss;
+import com.blog.model.DiscussCustom;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  *
@@ -10,4 +12,5 @@ import javax.servlet.http.HttpSession;
  */
 public interface DiscussService {
     public void addDiscuss(Discuss discuss, HttpSession session, Integer articleId) throws Exception;
+    public List<DiscussCustom> getAllDiscuss(Integer articleId) throws Exception;
 }
