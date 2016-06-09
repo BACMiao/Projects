@@ -5,7 +5,7 @@
 
 <mapper namespace="com.blog.dao.DiscussDao">
     <select id="findDiscussUser" parameterType="int" resultType="com.blog.model.DiscussCustom">
-        SELECT discuss.createTime, discuss.message, user.username
+        SELECT discuss.did, discuss.createTime, discuss.message, discuss.ownId, discuss.parentId, user.username
         FROM discuss INNER JOIN user ON discuss.userId = user.uid
         WHERE articleId=#{articleId} ORDER BY discuss.createTime
     </select>
@@ -17,4 +17,8 @@
     <delete id="deleteDiscussById" parameterType="int">
         DELETE FROM discuss WHERE did=#{did}
     </delete>
+    
+    <select id="findDiscussById" parameterType="int" resultType="com.blog.model.Discuss">
+        SELECT * FROM discuss WHERE did=#{did}
+    </select>
 </mapper>

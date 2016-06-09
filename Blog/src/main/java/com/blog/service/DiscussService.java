@@ -12,5 +12,6 @@ import java.util.List;
  */
 public interface DiscussService {
     public void addDiscuss(Discuss discuss, HttpSession session, Integer articleId) throws Exception;
-    public List<DiscussCustom> getAllDiscuss(Integer articleId) throws Exception;
+    public List<List> getAllDiscuss(Integer articleId) throws Exception;
+    public int addReply(Discuss reply, HttpSession session, Integer did) throws Exception;
 }

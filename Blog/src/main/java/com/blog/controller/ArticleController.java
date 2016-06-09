@@ -49,8 +49,9 @@ public class ArticleController {
     public String viewArticle(@RequestParam(value = "id", required = true) Integer id,
                               Model model) throws Exception {
         Article article = articleService.selectArticleById(id);
-        List<DiscussCustom> discuss = discussService.getAllDiscuss(id);
-        model.addAttribute("discuss", discuss);
+        List<List> lists = discussService.getAllDiscuss(id);
+        model.addAttribute("discuss", lists.get(0));
+        model.addAttribute("reply", lists.get(1));
         model.addAttribute("article", article);
         return "article/viewArticle";
     }

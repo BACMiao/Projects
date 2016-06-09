@@ -26,4 +26,11 @@ public class DiscussController {
         discussService.addDiscuss(discuss, session, articleId);
         return "redirect:/article/viewArticle?id=" + articleId;
     }
+
+    @RequestMapping("/reply")
+    public String addReply(Discuss reply, HttpSession session,
+                             @RequestParam(value = "parentId") Integer parentId) throws Exception{
+        int articleId = discussService.addReply(reply, session, parentId);
+        return "redirect:/article/viewArticle?id=" + articleId;
+    }
 }

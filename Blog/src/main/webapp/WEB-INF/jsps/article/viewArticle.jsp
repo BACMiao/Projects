@@ -26,9 +26,23 @@
 ${sessionScope.user.username}
 
 <div id="viewDiscuss">
-    <c:forEach var="discuss" items="${discuss}" >
+    <c:forEach var="discuss" items="${discuss}" varStatus="idx">
+        ${idx.index+1}楼：<br/>
         ${discuss.username}&nbsp;&nbsp;${discuss.createTime}<br/>
         ${discuss.message}<br/>
+        ----------------------------------
+        <br/>
+        <c:forEach var="replies" items="${reply}">
+            <c:if test="${replies.parentId == discuss.ownId}">
+                ${replies.username}&nbsp;&nbsp;${replies.createTime}<br/>
+                ${replies.message}<br/>
+            </c:if>
+        </c:forEach>
+        <form action="/discuss/reply?parentId=${discuss.did}" method="post">
+            <textarea id="reply" name="message"></textarea>
+            <input type="submit" value="回复">
+        </form>
+        <br/>
     </c:forEach>
 </div>
 <div id="Discuss">

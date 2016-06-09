@@ -75,6 +75,9 @@ public class Discuss {
         return "Discuss{" +
                 "did=" + did +
                 ", userId=" + userId +
+                ", articleId=" + articleId +
+                ", ownId='" + ownId + '\'' +
+                ", parentId='" + parentId + '\'' +
                 ", message='" + message + '\'' +
                 ", createTime=" + createTime +
                 '}';

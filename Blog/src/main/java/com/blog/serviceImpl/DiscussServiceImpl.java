@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -32,13 +33,35 @@ public class DiscussServiceImpl implements DiscussService {
         discuss.setCreateTime(TimeUtil.addTime());
         discuss.setOwnId(UUIDGenerator.getUUID());
         discussDao.insertDiscuss(discuss);
-
     }
 
     @Override
-    public List<DiscussCustom> getAllDiscuss(Integer articleId) throws Exception {
-        List<DiscussCustom> list = discussDao.findDiscussUser(articleId);
-        return list;
+    public List<List> getAllDiscuss(Integer articleId) throws Exception {
+        List<DiscussCustom> discusses = discussDao.findDiscussUser(articleId);
+        List<DiscussCustom> replies = new ArrayList<>();
+        List<List> lists = new ArrayList<>();
+        for(DiscussCustom ds : discusses ){
+            if (ds.getParentId()!= null){
+                replies.add(ds);
+            }
+        }
+        discusses.removeAll(replies);
+        lists.add(discusses);
+        lists.add(replies);
+        return lists;
+    }
+
+    @Override
+    public int addReply(Discuss reply, HttpSession session, Integer parentId) throws Exception {
+        User user = (User) session.getAttribute("user");
+        Discuss discuss = discussDao.findDiscussById(parentId);
+        reply.setUserId(user.getUid());
+        reply.setArticleId(discuss.getArticleId());
+        reply.setOwnId(UUIDGenerator.getUUID());
+        reply.setParentId(discuss.getOwnId());
+        reply.setCreateTime(TimeUtil.addTime());
+        discussDao.insertDiscuss(reply);
+        return discuss.getArticleId();
     }
 
     public DiscussDao getDiscussDao() {
