@@ -41,6 +41,18 @@ private ApplicationContext applicationContext;
         discussDao.deleteDiscussById(2);
     }
 
+    @Test
+    public void testFindDiscussUser() throws Exception{
+        DiscussDao discussDao = (DiscussDao) applicationContext.getBean("discussDao");
+        System.out.println(discussDao.findDiscussUser(3));
+    }
+
+    @Test
+    public void testFindDiscussById() throws Exception{
+        DiscussDao discussDao = (DiscussDao) applicationContext.getBean("discussDao");
+        System.out.println(discussDao.findDiscussById(5));
+    }
+
     @After
     public void after() throws Exception {
 

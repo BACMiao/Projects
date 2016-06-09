@@ -13,12 +13,22 @@
     <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
     <title>${article.title}</title>
     <script type="text/javascript">
-        url = "/article/json?id=" + ${article.id};
-        $.getJSON(url,function(article){
-            msg = article.msg;
-            $("#Article").html(msg);
-        })
+        $(function(){
+            url = "/article/json?id=" + ${article.id};
+            $.getJSON(url,function(article){
+                msg = article.msg;
+                $("#Article").html(msg);
+            });
 
+            $("#viewDiscuss h5.head").bind("click", function(){
+                var $content = $(this).next();
+                if ($content.is(":visible")){
+                    $content.hide();
+                }else {
+                    $content.show();
+                }
+            });
+        })
     </script>
 </head>
 <body>
@@ -38,18 +48,23 @@ ${sessionScope.user.username}
                 ${replies.message}<br/>
             </c:if>
         </c:forEach>
-        <form action="/discuss/reply?parentId=${discuss.did}" method="post">
-            <textarea id="reply" name="message"></textarea>
-            <input type="submit" value="回复">
-        </form>
+        <h5 class="head">回复</h5>
+        <div id="content" style="display:none;">
+            <form action="/discuss/reply?parentId=${discuss.did}" method="post">
+                <textarea id="reply" name="message" rows="8" cols="40"></textarea>
+                <input type="submit" value="回复">
+            </form>
+        </div>
         <br/>
     </c:forEach>
 </div>
 <div id="Discuss">
 
     <form action="/discuss/add?articleId=${article.id}" method="post">
-        <textarea id="message" name="message"></textarea>
-        <input type="submit" value="评论">
+        <div>
+            <textarea id="message" name="message" rows="10" cols="55"></textarea>
+            <input type="submit" value="评论">
+        </div>
     </form>
 </div>
 </body>
