@@ -23,8 +23,12 @@
 </head>
 <body>
 <div id="Article"></div>
+${sessionScope.user.username}
 <div id="Discuss">
-    <a href="#">评论</a>
+    <form action="/discuss/add?articleId=${article.id}" method="post">
+        <textarea id="message" name="message"></textarea>
+        <input type="submit" value="评论">
+    </form>
 </div>
 </body>
 </html>

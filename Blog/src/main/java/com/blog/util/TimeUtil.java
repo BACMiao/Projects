@@ -13,7 +13,7 @@ public class TimeUtil {
     }
 
     public static Date addTime() throws ParseException {
-        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss E");
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String a1 = dateformat.format(new Date());
         Date date = dateformat.parse(a1);
         return date;

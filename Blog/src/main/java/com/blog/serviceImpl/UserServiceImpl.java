@@ -21,6 +21,11 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public User findUserByName(String username) throws Exception {
+        return userDao.findUserByName(username);
+    }
+
+    @Override
     public void updateUserById(Integer uid, User user) throws Exception {
         user.setUid(uid);
         userDao.updateUserById(user);

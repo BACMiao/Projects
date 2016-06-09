@@ -32,7 +32,7 @@
 
 <div>
     <c:forEach var="article" items="${articles}" >
-        <a href="/article/viewArticle?id=${article.id}">${article.categoryId}&nbsp;&nbsp;${article.title}&nbsp;&nbsp;${article.createTime}</a>
+        <a href="/article/viewArticle?id=${article.id} " style="text-decoration: none;">${article.categoryId}&nbsp;&nbsp;${article.title}&nbsp;&nbsp;${article.createTime}</a>
         <br>
     </c:forEach>
 </div>

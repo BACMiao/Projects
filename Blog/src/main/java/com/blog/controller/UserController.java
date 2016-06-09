@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
+
 /**
  *
  * Created by Black on 2016/6/1.
@@ -38,8 +40,10 @@ public class UserController {
     }
 
     @RequestMapping("/exist")
-    public String existUser(User user) throws Exception{
+    public String existUser(User user, HttpSession session) throws Exception{
         if (userService.existUser(user)){
+            user = userService.findUserByName(user.getUsername());
+            session.setAttribute("user", user);
             return "user/success";
         }else {
             return "user/failure";
