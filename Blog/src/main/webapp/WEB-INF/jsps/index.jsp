@@ -21,20 +21,26 @@
             })
         });
     </script>
+
+    <style type="text/css">
+        div{text-align:center;}
+    </style>
 </head>
 <body>
-    <a href="/user/register">注册</a>
-    <a href="/user/login">登录</a>
-    <a href="/user/editUser?uid=2">编辑信息</a>
+    <div>
+        <img src="${ctx}/resources/image/logo.png" title="logo"  height="100" width="200"  />
+        <a href="#">主页</a>
+        <a href="#">热门文章</a>
+        <a href="/user/register">注册</a>
+        <a href="/user/login">登录</a>
+        <a href="/user/editUser?uid=2">编辑信息</a>
+    </div>
+    <div>
+        <c:forEach var="article" items="${articles}" >
+            <a href="/article/viewArticle?id=${article.id} " style="text-decoration: none;">${article.categoryId}&nbsp;&nbsp;${article.title}&nbsp;&nbsp;${article.createTime}</a>
+            <br>
+        </c:forEach>
+    </div>
     <a href="/admin/login">管理员登录</a>
-    <a href="/category/add">添加类别</a>
-    <a href="/article/add">添加文章</a>
-
-<div>
-    <c:forEach var="article" items="${articles}" >
-        <a href="/article/viewArticle?id=${article.id} " style="text-decoration: none;">${article.categoryId}&nbsp;&nbsp;${article.title}&nbsp;&nbsp;${article.createTime}</a>
-        <br>
-    </c:forEach>
-</div>
 </body>
 </html>

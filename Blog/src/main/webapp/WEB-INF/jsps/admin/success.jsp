@@ -11,6 +11,9 @@
     <title>Title</title>
 </head>
 <body>
+
+<a href="/category/add">添加类别</a>
+<a href="/article/add">添加文章</a>
 success
 </body>
 </html>

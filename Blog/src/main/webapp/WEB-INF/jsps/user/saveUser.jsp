@@ -41,6 +41,7 @@
 <body>
 <form action="/user/saveUser" method="post">
     <table width="18%" border="1">
+        <caption>用户注册</caption>
         <tr>
             <td>用户名</td>
             <td><input name="username" type="text" id="username" class="required"/></td>

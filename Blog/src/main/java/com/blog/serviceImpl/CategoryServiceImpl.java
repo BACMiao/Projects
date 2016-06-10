@@ -16,6 +16,11 @@ public class CategoryServiceImpl implements CategoryService {
     private CategoryDao categoryDao;
 
     @Override
+    public Category findCategoryById(Integer cid) throws Exception {
+        return categoryDao.findCategoryById(cid);
+    }
+
+    @Override
     public boolean existCategory(String categoryName) throws Exception {
        Category category = categoryDao.findCategoryByName(categoryName);
         if (category!=null && category.getCategoryName()!=""){
@@ -33,6 +38,12 @@ public class CategoryServiceImpl implements CategoryService {
             categoryDao.insertCategory(category);
             System.out.println("添加成功");
         }
+    }
+
+    @Override
+    public void categoryNumber(Category category) throws Exception {
+        category.setNumber(category.getNumber()+1);
+        updateCategory(category.getCid(),category);
     }
 
     @Override

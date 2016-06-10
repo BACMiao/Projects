@@ -12,6 +12,7 @@
 </head>
 <body>
 <form action="/user/exist" method="post">
+    <caption>用户登陆</caption>
     <table width="25%" border="1">
         <tr>
             <td>用户名</td>

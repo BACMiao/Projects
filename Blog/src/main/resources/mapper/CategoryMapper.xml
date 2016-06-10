@@ -7,6 +7,10 @@
         SELECT * FROM  category WHERE categoryName=#{categoryName}
     </select>
 
+    <select id="findCategoryById" parameterType="int" resultType="com.blog.model.Category">
+        SELECT * FROM  category WHERE cid=#{cid}
+    </select>
+
     <insert id="insertCategory" parameterType="com.blog.model.Category">
         INSERT INTO category(cid, categoryName) VALUES (#{cid},#{categoryName})
     </insert>
@@ -16,6 +20,6 @@
     </delete>
 
     <update id="updateCategoryById" parameterType="com.blog.model.Category">
-        UPDATE category SET categoryName=(#{categoryName}) WHERE cid=#{cid}
+        UPDATE category SET categoryName=(#{categoryName}), number=(#{number}) WHERE cid=#{cid}
     </update>
 </mapper>

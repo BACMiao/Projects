@@ -2,7 +2,9 @@ package com.blog.serviceImpl;
 
 import com.blog.dao.ArticleDao;
 import com.blog.model.Article;
+import com.blog.model.Category;
 import com.blog.service.ArticleService;
+import com.blog.service.CategoryService;
 import com.blog.util.MarkdownUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,7 @@ import java.util.List;
 public class ArticleServiceImpl implements ArticleService {
 
     private ArticleDao articleDao;
+    private CategoryService categoryService;
 
     @Override
     public boolean existArticle(String title) throws Exception {
@@ -70,6 +73,8 @@ public class ArticleServiceImpl implements ArticleService {
         }
         else {
             System.out.println("上传成功");
+            Category category = categoryService.findCategoryById(article.getCategoryId());
+            categoryService.categoryNumber(category);
             articleDao.insertArticle(article);
         }
     }
@@ -81,5 +86,14 @@ public class ArticleServiceImpl implements ArticleService {
     @Autowired
     public void setArticleDao(ArticleDao articleDao) {
         this.articleDao = articleDao;
+    }
+
+    public CategoryService getCategoryService() {
+        return categoryService;
+    }
+
+    @Autowired
+    public void setCategoryService(CategoryService categoryService) {
+        this.categoryService = categoryService;
     }
 }
