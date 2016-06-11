@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
+ *
  * Created by Black on 2016/6/1.
  */
 public class CustomDateConverter implements Converter<String, Date> {

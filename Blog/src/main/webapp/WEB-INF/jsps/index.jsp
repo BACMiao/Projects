@@ -10,6 +10,10 @@
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
     <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
+    <link href="${ctx}/resources/css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/css/head.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/css/home.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/css/main.css" rel="stylesheet" type="text/css"/>
     <title>Title</title>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -21,26 +25,39 @@
             })
         });
     </script>
-
-    <style type="text/css">
-        div{text-align:center;}
-    </style>
 </head>
 <body>
-    <div>
-        <img src="${ctx}/resources/image/logo.png" title="logo"  height="100" width="200"  />
-        <a href="#">主页</a>
-        <a href="#">热门文章</a>
-        <a href="/user/register">注册</a>
-        <a href="/user/login">登录</a>
-        <a href="/user/editUser?uid=2">编辑信息</a>
+    <div id="header">
+        <div id="logo"><img src="${ctx}/resources/image/logo.png" title="logo"  height="100" width="250"  /></div>
+        <div id="user">
+            您还未登陆！|
+            <a href="/user/register">注册</a>|
+            <a href="/user/login">登录</a>|
+            <a href="/user/editUser?uid=2">编辑信息</a>
+        </div>
     </div>
-    <div>
-        <c:forEach var="article" items="${articles}" >
-            <a href="/article/viewArticle?id=${article.id} " style="text-decoration: none;">${article.categoryId}&nbsp;&nbsp;${article.title}&nbsp;&nbsp;${article.createTime}</a>
-            <br>
-        </c:forEach>
+
+    <div id="home">
+        陈淼的博客(欢迎大家收藏此博客)
     </div>
-    <a href="/admin/login">管理员登录</a>
+
+    <div id="main">
+        <div id="left">
+
+        </div>
+        <div id="right">
+            <c:forEach var="article" items="${articles}" >
+                <a href="/article/viewArticle?id=${article.id} " style="text-decoration: none;">[${article.categoryName}]&nbsp;&nbsp;${article.title}&nbsp;&nbsp;${article.createTime}</a>
+                <br>
+            </c:forEach>
+        </div>
+    </div>
+
+
+    <hr/>
+    <div id="footer">
+        <p>声明：本博客所有文章版权属于<a href="/admin/login" style="text-decoration: none;color: black">作者</a>。没有作者许可不得转载，若作者同意转载，必须以超链接形式标明文章原始出处和作者。</p>
+    </div>
+
 </body>
 </html>

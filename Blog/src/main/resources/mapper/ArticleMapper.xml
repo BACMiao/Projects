@@ -42,8 +42,10 @@
         </where>
     </select>
     
-    <select id="findAllArticle" resultType="com.blog.model.Article">
-        SELECT * FROM article ORDER BY createTime DESC
+    <select id="findAllArticle" resultType="com.blog.model.ArticleCustom">
+        SELECT article.*, category.categoryName
+        FROM article INNER JOIN category ON article.categoryId = category.cid
+        ORDER BY createTime DESC;
     </select>
 
 </mapper>

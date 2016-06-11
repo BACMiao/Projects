@@ -2,6 +2,7 @@ package com.blog.serviceImpl;
 
 import com.blog.dao.ArticleDao;
 import com.blog.model.Article;
+import com.blog.model.ArticleCustom;
 import com.blog.model.Category;
 import com.blog.service.ArticleService;
 import com.blog.service.CategoryService;
@@ -57,7 +58,7 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<Article> selectAllArticle() throws Exception {
+    public List<ArticleCustom > selectAllArticle() throws Exception {
         return articleDao.findAllArticle();
     }
 

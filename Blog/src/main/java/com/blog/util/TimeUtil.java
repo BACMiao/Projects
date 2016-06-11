@@ -18,4 +18,11 @@ public class TimeUtil {
         Date date = dateformat.parse(a1);
         return date;
     }
+
+    public static Date addTime(Date date) throws ParseException {
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String a1 = dateformat.format(date);
+        Date date2 = dateformat.parse(a1);
+        return date2;
+    }
 }

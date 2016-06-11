@@ -1,0 +1,18 @@
+#main{
+    width: 1000PX;
+    height: 600px;
+}
+
+#main #left{
+    width: 200px;
+    height: 600px;
+    float: left;
+    background-color: white;
+}
+
+#main #right{
+    width: 750px;
+    height: 600px;
+    float: right;
+    background-color: white;
+}
