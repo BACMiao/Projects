@@ -1,9 +1,13 @@
 #main{
     width: 1000PX;
     height: 600px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin:auto;
 }
 
 #main #left{
+    border: deepskyblue solid 3px;
     width: 200px;
     height: 600px;
     float: left;
@@ -11,8 +15,30 @@
 }
 
 #main #right{
-    width: 750px;
+    border: deepskyblue solid 3px;
+    width: 780px;
     height: 600px;
     float: right;
     background-color: white;
+}
+#main #right a:link ,a:visited, a:active{
+    display:block;
+    font-weight:bold;
+    width:240px;
+    font-size:17px;
+    font-family: sans-serif;
+    padding:4px;
+    color: blue;
+    text-decoration:none;
+}
+#main #right a:hover{
+    display:block;
+    font-weight:bold;
+    font-size:17px;
+    font-family: sans-serif;
+    color:#FFFFFF;
+    background-color:blue;
+    width:240px;
+    padding:4px;
+    text-decoration:none;
 }

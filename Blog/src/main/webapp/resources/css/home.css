@@ -2,4 +2,32 @@
     width: 1000PX;
     height: 200px;
     background-color: deepskyblue;
+    margin:auto;
+}
+
+#home #change ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
+
+#home #change li{
+    float:left;
+}
+#home #change a:link,a:visited
+{
+    display:block;
+    width:120px;
+    font-weight:bold;
+    color:#FFFFFF;
+    background-color:#bebebe;
+    text-align:center;
+    padding:4px;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+#home #change a:hover,a:active
+{
+    background-color:#cc0000;
 }

@@ -14,6 +14,7 @@
     <link href="${ctx}/resources/css/head.css" rel="stylesheet" type="text/css"/>
     <link href="${ctx}/resources/css/home.css" rel="stylesheet" type="text/css"/>
     <link href="${ctx}/resources/css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/css/foot.css" rel="stylesheet" type="text/css"/>
     <title>Title</title>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -39,6 +40,14 @@
 
     <div id="home">
         陈淼的博客(欢迎大家收藏此博客)
+        <div id="change">
+            <ul>
+            <li><a href="#">博文</a></li>
+            <li><a href="#">收藏</a></li>
+            <li><a href="#">留言</a></li>
+            <li><a href="#">关于我</a></li>
+            </ul>
+        </div>
     </div>
 
     <div id="main">
@@ -46,16 +55,16 @@
 
         </div>
         <div id="right">
+            文章列表：
+            <hr/>
             <c:forEach var="article" items="${articles}" >
-                <a href="/article/viewArticle?id=${article.id} " style="text-decoration: none;">[${article.categoryName}]&nbsp;&nbsp;${article.title}&nbsp;&nbsp;${article.createTime}</a>
+                <a href="/article/viewArticle?id=${article.id} " id="a1" style="text-decoration: none;">[${article.categoryName}]&nbsp;&nbsp;${article.title}</a>&nbsp;&nbsp;${article.createTime}
                 <br>
             </c:forEach>
         </div>
     </div>
-
-
-    <hr/>
     <div id="footer">
+        <hr/>
         <p>声明：本博客所有文章版权属于<a href="/admin/login" style="text-decoration: none;color: black">作者</a>。没有作者许可不得转载，若作者同意转载，必须以超链接形式标明文章原始出处和作者。</p>
     </div>
 

@@ -2,18 +2,21 @@
     width: 1000PX;
     height: 100px;
     background-color: white;
+    margin:auto;
 }
 
 #header #logo{
     float: left;
     width: 500px;
     height: 100px;
-    /*background: red;*/
 }
 
 #header #user{
     float: right;
     width: 500px;
     height: 100px;
-    /*background: blue;*/
+    padding-top: 2cm;
+    position:absolute;
+    right:0px;
+    /*background-color: blue;*/
 }
