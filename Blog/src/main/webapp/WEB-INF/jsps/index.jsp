@@ -29,7 +29,7 @@
 </head>
 <body>
     <div id="header">
-        <div id="logo"><img src="${ctx}/resources/image/logo.png" title="logo"  height="100" width="250"  /></div>
+        <div id="logo"><img src="${ctx}/resources/image/logo.png" title="logo"  height="100" width="250" /></div>
         <div id="user">
             您还未登陆！|
             <a href="/user/register">注册</a>|
@@ -42,23 +42,33 @@
         陈淼的博客(欢迎大家收藏此博客)
         <div id="change">
             <ul>
-            <li><a href="#">博文</a></li>
-            <li><a href="#">收藏</a></li>
-            <li><a href="#">留言</a></li>
-            <li><a href="#">关于我</a></li>
+            <li><a href="#" class="dh">博文</a></li>
+            <li><a href="#" class="dh">收藏</a></li>
+            <li><a href="#" class="dh">留言</a></li>
+            <li><a href="#" class="dh">关于我</a></li>
             </ul>
         </div>
     </div>
 
     <div id="main">
         <div id="left">
+            <div id="portrait">
+                <img src="http://7xv9yx.com1.z0.glb.clouddn.com/bapocalypseHead.png"/>
+            </div>
+            <div id="category">
+                文章分类：
+                <br/>
+                <c:forEach var="category" items="${category}">
+                    <a href="#">${category.categoryName}(${category.number})</a><br/>
+                </c:forEach>
 
+            </div>
         </div>
         <div id="right">
             文章列表：
             <hr/>
             <c:forEach var="article" items="${articles}" >
-                <a href="/article/viewArticle?id=${article.id} " id="a1" style="text-decoration: none;">[${article.categoryName}]&nbsp;&nbsp;${article.title}</a>&nbsp;&nbsp;${article.createTime}
+                <a href="/article/viewArticle?id=${article.id} " id="a1" style="text-decoration: none;" class="article">[${article.categoryName}]&nbsp;&nbsp;${article.title}</a>&nbsp;&nbsp;${article.createTime}
                 <br>
             </c:forEach>
         </div>

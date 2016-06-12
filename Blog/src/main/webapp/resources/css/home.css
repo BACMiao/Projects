@@ -5,17 +5,24 @@
     margin:auto;
 }
 
+#home #change{
+    float: right;
+    width: 550PX;
+    height: 25px;
+    position:absolute;
+    right:410px;
+    padding-top: 156px;
+}
 #home #change ul{
     list-style-type:none;
     margin:0;
     padding:0;
     overflow:hidden;
 }
-
 #home #change li{
     float:left;
 }
-#home #change a:link,a:visited
+a.dh:link,a.dh:visited
 {
     display:block;
     width:120px;
@@ -27,7 +34,7 @@
     text-decoration:none;
     text-transform:uppercase;
 }
-#home #change a:hover,a:active
+a.dh:hover,a.dh:active
 {
-    background-color:#cc0000;
+    background-color: #0000FF;
 }

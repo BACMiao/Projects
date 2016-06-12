@@ -48,6 +48,12 @@ public class CategoryMapperTest {
         categoryDao.updateCategoryById(category);
     }
 
+    @Test
+    public void testFindAllCategory() throws Exception{
+        CategoryDao categoryDao = (CategoryDao) applicationContext.getBean("categoryDao");
+        System.out.println(categoryDao.findAllCategory());
+    }
+
     @After
     public void after() throws Exception {
     }

@@ -21,7 +21,26 @@
     float: right;
     background-color: white;
 }
-#main #right a:link ,a:visited, a:active{
+
+#main #left #portrait{
+    margin:auto;
+    padding-top: 7px;
+    padding-bottom: 14px;
+    padding-left: 9px;
+
+}
+#main #left #category{
+    padding-left: 9px;
+}
+
+#main #left #portrait img{
+    height:240px;
+    width:180px;
+    border: #999999 solid 1px;
+    margin:auto;
+}
+
+a.article:link, a.article:visited, a.article:active{
     display:block;
     font-weight:bold;
     width:240px;
@@ -31,7 +50,7 @@
     color: blue;
     text-decoration:none;
 }
-#main #right a:hover{
+a.article:hover{
     display:block;
     font-weight:bold;
     font-size:17px;

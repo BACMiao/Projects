@@ -6,6 +6,8 @@ import com.blog.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  *
  * Created by Black on 2016/6/5.
@@ -18,6 +20,11 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public Category findCategoryById(Integer cid) throws Exception {
         return categoryDao.findCategoryById(cid);
+    }
+
+    @Override
+    public List<Category> findAllCategory() throws Exception {
+        return categoryDao.findAllCategory();
     }
 
     @Override

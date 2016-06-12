@@ -11,6 +11,10 @@
         SELECT * FROM  category WHERE cid=#{cid}
     </select>
 
+    <select id="findAllCategory" resultType="com.blog.model.Category">
+        SELECT * FROM category
+    </select>
+
     <insert id="insertCategory" parameterType="com.blog.model.Category">
         INSERT INTO category(cid, categoryName) VALUES (#{cid},#{categoryName})
     </insert>
