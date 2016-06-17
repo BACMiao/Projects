@@ -12,6 +12,7 @@ public class Article {
     private Date createTime;
     private String articlePath;
     private int categoryId;
+    private String articleDescribe;
 
     public int getId() {
         return id;
@@ -53,6 +54,14 @@ public class Article {
         this.categoryId = categoryId;
     }
 
+    public String getArticleDescribe() {
+        return articleDescribe;
+    }
+
+    public void setArticleDescribe(String articleDescribe) {
+        this.articleDescribe = articleDescribe;
+    }
+
     @Override
     public String toString() {
         return "Article{" +
@@ -61,6 +70,7 @@ public class Article {
                 ", createTime=" + createTime +
                 ", articlePath='" + articlePath + '\'' +
                 ", categoryId=" + categoryId +
+                ", articleDescribe='" + articleDescribe + '\'' +
                 '}';
     }
 }

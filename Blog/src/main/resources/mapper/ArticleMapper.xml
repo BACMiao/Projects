@@ -24,7 +24,7 @@
         <selectKey keyProperty="id" order="AFTER" resultType="int">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        INSERT INTO article(id, createTime, articlePath, categoryId, title) VALUES (#{id},#{createTime},#{articlePath},#{categoryId},#{title})
+        INSERT INTO article(id, createTime, articlePath, categoryId, title, articleDescribe) VALUES (#{id},#{createTime},#{articlePath},#{categoryId},#{title},#{articleDescribe})
     </insert>
     
     <delete id="deleteArticleById" parameterType="int">

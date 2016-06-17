@@ -25,6 +25,10 @@
             <td>博文：</td>
             <td><input name="file" type="file" /></td>
         </tr>
+        <tr>
+            <td>简介：</td>
+            <td><textarea id="articleDescribe" name="articleDescribe" rows="10" cols="55"></textarea></td>
+        </tr>
     </table>
     <input type="submit" value="发表"/>
 </form>

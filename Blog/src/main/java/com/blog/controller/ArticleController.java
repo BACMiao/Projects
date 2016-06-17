@@ -2,8 +2,9 @@ package com.blog.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.blog.model.Article;
-import com.blog.model.DiscussCustom;
+import com.blog.model.Category;
 import com.blog.service.ArticleService;
+import com.blog.service.CategoryService;
 import com.blog.service.DiscussService;
 import com.blog.util.TimeUtil;
 import com.blog.util.UploadUtil;
@@ -30,6 +31,8 @@ public class ArticleController {
     private ArticleService articleService;
     @Autowired
     private DiscussService discussService;
+    @Autowired
+    CategoryService categoryService;
 
     @RequestMapping("/add")
     public String add(){
@@ -50,9 +53,11 @@ public class ArticleController {
                               Model model) throws Exception {
         Article article = articleService.selectArticleById(id);
         List<List> lists = discussService.getAllDiscuss(id);
+        List<Category> categories = categoryService.findAllCategory();
         model.addAttribute("discuss", lists.get(0));
         model.addAttribute("reply", lists.get(1));
         model.addAttribute("article", article);
+        model.addAttribute("category", categories);
         return "article/viewArticle";
     }
 

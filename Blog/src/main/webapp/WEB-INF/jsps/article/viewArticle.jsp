@@ -11,6 +11,9 @@
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
     <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
+    <link href="${ctx}/resources/css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/css/article.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/css/main.css" rel="stylesheet" type="text/css"/>
     <title>${article.title}</title>
     <script type="text/javascript">
         $(function(){
@@ -32,9 +35,12 @@
     </script>
 </head>
 <body>
-<div id="Article"></div>
-${sessionScope.user.username}
-
+ <jsp:include page="../base/head.jsp"/>
+ <jsp:include page="../base/home.jsp"/>
+<div id="main">
+    <jsp:include page="../base/left.jsp"/>
+    <div id="Article"></div>
+</div>
 <div id="viewDiscuss">
     <c:forEach var="discuss" items="${discuss}" varStatus="idx">
         ${idx.index+1}楼：<br/>
@@ -67,5 +73,7 @@ ${sessionScope.user.username}
         </div>
     </form>
 </div>
+
+<jsp:include page="../base/foot.jsp"/>
 </body>
 </html>

@@ -1,6 +1,5 @@
 #main{
     width: 1000PX;
-    height: 600px;
     padding-top: 7px;
     padding-bottom: 7px;
     margin:auto;
@@ -17,9 +16,18 @@
 #main #right{
     border: deepskyblue solid 3px;
     width: 780px;
-    height: 600px;
     float: right;
     background-color: white;
+}
+
+#main #Article{
+    width: 780PX;
+    border: deepskyblue solid 3px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    float: right;
+    margin:auto;
+    background-color: #999999;
 }
 
 #main #left #portrait{
