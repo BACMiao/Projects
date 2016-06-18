@@ -16,8 +16,10 @@
         SELECT * FROM article WHERE id=#{id}
     </select>
 
-    <select id="findArticleByTitle" parameterType="java.lang.String" resultType="com.blog.model.Article">
-        SELECT * FROM article WHERE title LIKE '%${value}%'
+    <select id="findArticleByTitle" parameterType="java.lang.String" resultType="com.blog.model.ArticleCustom">
+        SELECT article.*, category.categoryName
+        FROM article INNER JOIN category
+        WHERE title LIKE '%${value}%' AND article.categoryId=category.cid
     </select>
 
     <insert id="insertArticle" parameterType="com.blog.model.Article">

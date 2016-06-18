@@ -11,7 +11,7 @@
     <title>新增博文</title>
 </head>
 <body>
-<form action="/article/addCategory" method="post"  enctype="multipart/form-data">
+<form action="/article/addArticle" method="post"  enctype="multipart/form-data">
     <table width="25%" border="1">
         <tr>
             <td>标题：</td>

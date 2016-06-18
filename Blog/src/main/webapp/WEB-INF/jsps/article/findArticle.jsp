@@ -14,28 +14,18 @@
     <link href="${ctx}/resources/css/main.css" rel="stylesheet" type="text/css"/>
     <title>Title</title>
     <script type="text/javascript">
-//        $(function(){
-//            $("#viewDiscuss h5.head").bind("click", function(){
-//                var $content = $(this).next();
-//                if ($content.is(":visible")){
-//                    $content.hide();
-//                }else {
-//                    $content.show();
-//                }
-//            });
-//        })
     </script>
 </head>
 <body>
-    <jsp:include page="base/head.jsp"/>
-    <jsp:include page="base/home.jsp"/>
+    <jsp:include page="../base/head.jsp"/>
+    <jsp:include page="../base/home.jsp"/>
     <div id="main">
-        <jsp:include page="base/left.jsp"/>
+        <jsp:include page="../base/left.jsp"/>
         <div id="right">
             <br/>
-            &nbsp;文章列表：
+            &nbsp;搜寻文章列表：
             <hr/>
-            <c:forEach var="article" items="${articles}" >
+            <c:forEach var="article" items="${articleCustoms}" >
                 <a href="/article/viewArticle?id=${article.id} " id="a1" style="text-decoration: none;" class="article">[${article.categoryName}]&nbsp;&nbsp;${article.title}</a>
                 <p class="describe">${article.articleDescribe}</p>
                 <div class="bottom">${article.createTime}|浏览|评论|博客分类：${article.categoryName}</div>

@@ -26,9 +26,11 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public boolean existArticle(String title) throws Exception {
-        Article article = articleDao.findArticleByTitle(title);
-        if (article!=null && article.getTitle()!=""){
-            return true;
+        List<ArticleCustom> article = articleDao.findArticleByTitle(title);
+        for (Article art: article){
+            if (art!=null && art.getTitle()!=""){
+                return true;
+            }
         }
         return false;
     }
@@ -65,6 +67,11 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public Article selectArticleById(Integer id) throws Exception {
         return articleDao.findArticleById(id);
+    }
+
+    @Override
+    public List<ArticleCustom> selectArticleByTitle(String title) throws Exception {
+        return articleDao.findArticleByTitle(title);
     }
 
     @Override

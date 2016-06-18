@@ -10,7 +10,6 @@
 <html>
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
-    <link href="${ctx}/resources/css/foot.css" rel="stylesheet" type="text/css"/>
     <title>foot</title>
 </head>
 <body>

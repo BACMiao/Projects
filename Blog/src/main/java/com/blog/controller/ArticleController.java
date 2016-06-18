@@ -2,6 +2,7 @@ package com.blog.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.blog.model.Article;
+import com.blog.model.ArticleCustom;
 import com.blog.model.Category;
 import com.blog.service.ArticleService;
 import com.blog.service.CategoryService;
@@ -39,8 +40,8 @@ public class ArticleController {
         return "article/add";
     }
 
-    @RequestMapping("/addCategory")
-    public String addCategory(@RequestParam("file") CommonsMultipartFile file,
+    @RequestMapping("/addArticle")
+    public String addArticle(@RequestParam("file") CommonsMultipartFile file,
                               Article article, HttpServletRequest request) throws Exception {
         article.setCreateTime(TimeUtil.addTime());
         article.setArticlePath(UploadUtil.upload(file, article, request));
@@ -69,5 +70,13 @@ public class ArticleController {
         article.put("msg", msg);
         System.out.println(article.toString());
         return article.toJSONString();
+    }
+
+    @RequestMapping("/findArticleByTitle")
+    public String findArticleByTitle(@RequestParam(value = "title", required = true) String title,
+                                     Model model) throws Exception {
+        List<ArticleCustom> articleCustoms = articleService.selectArticleByTitle(title);
+        model.addAttribute("articleCustoms", articleCustoms);
+        return "article/findArticle";
     }
 }

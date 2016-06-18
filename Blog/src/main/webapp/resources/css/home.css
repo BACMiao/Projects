@@ -3,6 +3,8 @@
     height: 200px;
     background-color: deepskyblue;
     margin:auto;
+    position:relative;
+    padding-top:4px;
 }
 
 #home #change{
@@ -10,8 +12,8 @@
     width: 550PX;
     height: 25px;
     position:absolute;
-    right:410px;
-    padding-top: 156px;
+    right:234px;
+    bottom:1px;
 }
 #home #change ul{
     list-style-type:none;
@@ -21,6 +23,15 @@
 }
 #home #change li{
     float:left;
+}
+
+#home #find{
+    float: right;
+    width: 180PX;
+    height: 25px;
+    position:absolute;
+    right:0px;
+    bottom:1px;
 }
 a.dh:link,a.dh:visited
 {

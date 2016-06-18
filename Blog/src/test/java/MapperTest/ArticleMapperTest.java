@@ -2,6 +2,7 @@ package mapperTest;
 
 import com.blog.dao.ArticleDao;
 import com.blog.model.Article;
+import com.blog.model.ArticleCustom;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,6 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -31,7 +33,7 @@ public class ArticleMapperTest {
     @Test
     public void testFindArticleByTitle() throws Exception{
         ArticleDao articleDao = (ArticleDao) applicationContext.getBean("articleDao");
-        Article article = articleDao.findArticleByTitle("搭建");
+        List<ArticleCustom> article = articleDao.findArticleByTitle("搭建");
         System.out.println(article);
     }
 

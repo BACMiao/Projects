@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="home">
-    陈淼的博欢迎大家收藏此博客)
+    <h1>写文章的黑猴子的博客</h1>
     <div id="change">
         <ul>
             <li><a href="#" class="dh">博文</a></li>
@@ -23,6 +23,13 @@
             <li><a href="#" class="dh">留言</a></li>
             <li><a href="#" class="dh">关于我</a></li>
         </ul>
+    </div>
+    <div id="find">
+        <form action="/article/findArticleByTitle" method="get">
+            <input type="text" name="title"/>
+            <input type="submit" value="搜索"/>
+        </form>
+
     </div>
 </div>
 </body>

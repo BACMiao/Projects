@@ -73,7 +73,6 @@
         </div>
     </form>
 </div>
-
-<jsp:include page="../base/foot.jsp"/>
+ <%--<jsp:include page="../base/foot.jsp"/>--%>
 </body>
 </html>
