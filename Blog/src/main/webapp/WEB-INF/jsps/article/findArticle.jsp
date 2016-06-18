@@ -26,7 +26,7 @@
             &nbsp;搜寻文章列表：
             <hr/>
             <c:forEach var="article" items="${articleCustoms}" >
-                <a href="/article/viewArticle?id=${article.id} " id="a1" style="text-decoration: none;" class="article">[${article.categoryName}]&nbsp;&nbsp;${article.title}</a>
+                <a href="/article/viewArticle?id=${article.id} " id="a1" style="text-decoration: none;" class="article">[${article.categoryName}]&nbsp;${article.title}</a>
                 <p class="describe">${article.articleDescribe}</p>
                 <div class="bottom">${article.createTime}|浏览|评论|博客分类：${article.categoryName}</div>
                 <hr style="border-top-style:dotted"/>
