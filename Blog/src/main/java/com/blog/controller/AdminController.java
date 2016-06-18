@@ -31,4 +31,14 @@ public class AdminController {
         }
     }
 
+    @RequestMapping("/tree")
+    public String tree(){
+        return "admin/tree";
+    }
+
+    @RequestMapping("/main")
+    public String main(){
+        return "admin/main";
+    }
+
 }

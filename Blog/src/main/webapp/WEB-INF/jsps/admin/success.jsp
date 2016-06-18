@@ -11,7 +11,7 @@
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
     <link rel="stylesheet" type="text/css" href="${ctx}/resources/css/index.css" />
-    <title>Title</title>
+    <title>后台管理系统</title>
 </head>
 <body>
 <div id="wrapper">
@@ -26,14 +26,12 @@
         </div>
     </div>
     <div id="navigator">
-        <iframe src="<jsp:include page="tree.jsp"/>"></iframe>
+        <iframe src="/admin/tree"></iframe>
     </div>
     <div id="main">
-        <iframe name="MainFrame" src="Users_login_main.jsp"></iframe>
+        <iframe name="MainFrame" src="/admin/main"></iframe>
     </div>
     <div id="footer">Copyright © 2009-2015 All Rights Reserved Powered By Somoniu</div>
 </div>
-
-success
 </body>
 </html>

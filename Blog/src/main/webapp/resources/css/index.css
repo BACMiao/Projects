@@ -55,7 +55,7 @@ body{
 	left:50%;
 	margin-top:15px;
 	margin-left:-300px;
-    float: float;
+    float: right;
     height: 38px;
 	width:615px;
 	line-height:38px;
@@ -82,15 +82,15 @@ body{
 	line-height:34px;
 	vertical-align:middle;
 	font-size:14px;
-	border:2px solid solid;
+	border:2px solid;
 	border-right-style:groove;
 }
 .menu_item{
 	display: list-item;
 	float:left;
 	width:100px;
+    border-right-style:groove;
 	border-right:2px solid #F6F6F6;
-	border-right-style:groove;
 	cursor:pointer;
 }
 .on{
@@ -146,9 +146,7 @@ body{
     width:200px;
     margin:5px 2px 5px 2px;
     left:5px;
-    border-color: #77D1F6;
-    border-width: 2px;
-    border-style: solid;
+    border: 2px solid #77D1F6;
     border-radius: 12px;
     -moz-box-shadow: 6px 6px 12px #282828;
     -webkit-box-shadow: 6px 6px 12px #282828;
@@ -159,9 +157,7 @@ body{
     width: 80%;
     margin:5px;
     left:5px;
-    border-color: #77D1F6;
-    border-width: 2px;
-    border-style: solid;
+    border: 2px solid #77D1F6;
     border-radius: 12px 12px;
     -moz-box-shadow: 6px 6px 12px #282828;
     -webkit-box-shadow: 6px 6px 12px #282828;
