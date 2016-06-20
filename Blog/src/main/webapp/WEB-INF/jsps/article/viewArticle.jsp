@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
@@ -44,13 +45,13 @@
 <div id="viewDiscuss">
     <c:forEach var="discuss" items="${discuss}" varStatus="idx">
         ${idx.index+1}楼：<br/>
-        ${discuss.username}&nbsp;&nbsp;${discuss.createTime}<br/>
+        ${discuss.username}&nbsp;&nbsp;<fmt:formatDate value="${discuss.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/><br/>
         ${discuss.message}<br/>
         ----------------------------------
         <br/>
         <c:forEach var="replies" items="${reply}">
             <c:if test="${replies.parentId == discuss.ownId}">
-                ${replies.username}&nbsp;&nbsp;${replies.createTime}<br/>
+                ${replies.username}&nbsp;&nbsp;<fmt:formatDate value="${replies.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/><br/>
                 ${replies.message}<br/>
             </c:if>
         </c:forEach>
@@ -65,7 +66,6 @@
     </c:forEach>
 </div>
 <div id="Discuss">
-
     <form action="/discuss/add?articleId=${article.id}" method="post">
         <div>
             <textarea id="message" name="message" rows="10" cols="55"></textarea>

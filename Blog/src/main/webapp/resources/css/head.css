@@ -20,3 +20,14 @@
     right:0px;
     /*background-color: blue;*/
 }
+
+#header #user #userLogin{
+    padding-left: 100px;
+    width: 200px;
+    /*background-color: #FF0000;*/
+}
+
+#header #user #edit{
+    padding-left: 50px;
+    /*background-color: #FF0000;*/
+}

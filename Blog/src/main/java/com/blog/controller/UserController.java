@@ -43,7 +43,7 @@ public class UserController {
     public String existUser(User user, HttpSession session) throws Exception{
         if (userService.existUser(user)){
             user = userService.findUserByName(user.getUsername());
-            session.setAttribute("user", user);
+            session.setAttribute("loginUsername", user.getUsername());
             return "user/success";
         }else {
             return "user/failure";
@@ -62,5 +62,13 @@ public class UserController {
     public String updateUser(Integer uid, User user)throws Exception{
         userService.updateUserById(uid, user);
         return "user/editUser";
+    }
+
+    @RequestMapping("/userLogout")
+    public String userLogout(HttpSession session){
+        if (session.getAttribute("loginUsername")!=null){
+            session.removeAttribute("loginUsername");
+        }
+        return "redirect:/";
     }
 }

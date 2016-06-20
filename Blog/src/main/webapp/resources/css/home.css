@@ -1,10 +1,18 @@
 #home{
     width: 1000PX;
-    height: 200px;
+    height: 130px;
     background-color: deepskyblue;
     margin:auto;
     position:relative;
     padding-top:4px;
+}
+
+#home h1{
+    color: white;
+    width: 500px;
+    padding-left: 75px;
+    padding-top: 25px;
+    /*background-color: #FF0000;*/
 }
 
 #home #change{
@@ -14,7 +22,7 @@
     position:absolute;
     right:234px;
     bottom:1px;
-    background-color: chartreuse;
+    /*background-color: chartreuse;*/
 }
 #home #change ul{
     list-style-type:none;
@@ -33,7 +41,7 @@
     position:absolute;
     right:0px;
     bottom:1px;
-    background-color: green;
+    /*background-color: green;*/
 }
 a.dh:link,a.dh:visited
 {

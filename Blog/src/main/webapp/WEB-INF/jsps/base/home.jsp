@@ -18,7 +18,7 @@
     <h1>写文章的黑猴子的博客</h1>
     <div id="change">
         <ul>
-            <li><a href="#" class="dh">博文</a></li>
+            <li><a href="/" class="dh">博文</a></li>
             <li><a href="#" class="dh">收藏</a></li>
             <li><a href="#" class="dh">留言</a></li>
             <li><a href="#" class="dh">关于我</a></li>

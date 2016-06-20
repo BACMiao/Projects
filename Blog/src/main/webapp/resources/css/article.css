@@ -1,9 +1,12 @@
 #viewDiscuss{
-    width: 1000PX;
+    width: 600PX;
     margin:auto;
+    background-color: #FF0000;
+    border: deepskyblue solid 3px;
+    padding-right:100px;
 }
 
 #Discuss{
-    width: 1000PX;
+    width: 780PX;
     margin:auto;
 }
