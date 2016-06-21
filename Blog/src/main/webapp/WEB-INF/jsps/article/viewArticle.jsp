@@ -13,7 +13,6 @@
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
     <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
     <link href="${ctx}/resources/css/base.css" rel="stylesheet" type="text/css"/>
-    <link href="${ctx}/resources/css/article.css" rel="stylesheet" type="text/css"/>
     <link href="${ctx}/resources/css/main.css" rel="stylesheet" type="text/css"/>
     <title>${article.title}</title>
     <script type="text/javascript">
@@ -24,12 +23,17 @@
                 $("#Article").html(msg);
             });
 
-            $("#viewDiscuss h5.head").bind("click", function(){
+            $("#viewDiscuss div.head").bind("click", function(){
+                var loginUsername="<%=session.getAttribute("loginUsername")%>";
                 var $content = $(this).next();
-                if ($content.is(":visible")){
-                    $content.hide();
+                if (loginUsername=='null'){
+                    alert("请先登录！")
                 }else {
-                    $content.show();
+                    if ($content.is(":visible")){
+                        $content.hide();
+                    }else {
+                        $content.show();
+                    }
                 }
             });
         })
@@ -41,38 +45,40 @@
 <div id="main">
     <jsp:include page="../base/left.jsp"/>
     <div id="Article"></div>
-</div>
-<div id="viewDiscuss">
-    <c:forEach var="discuss" items="${discuss}" varStatus="idx">
-        ${idx.index+1}楼：<br/>
-        ${discuss.username}&nbsp;&nbsp;<fmt:formatDate value="${discuss.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/><br/>
-        ${discuss.message}<br/>
-        ----------------------------------
-        <br/>
-        <c:forEach var="replies" items="${reply}">
-            <c:if test="${replies.parentId == discuss.ownId}">
-                ${replies.username}&nbsp;&nbsp;<fmt:formatDate value="${replies.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/><br/>
-                ${replies.message}<br/>
-            </c:if>
-        </c:forEach>
-        <h5 class="head">回复</h5>
-        <div id="content" style="display:none;">
-            <form action="/discuss/reply?parentId=${discuss.did}" method="post">
-                <textarea id="reply" name="message" rows="8" cols="40"></textarea>
-                <input type="submit" value="回复">
+    <div id="Discuss">
+        <div id="viewDiscuss">
+            <c:forEach var="discuss" items="${discuss}" varStatus="idx">
+                ${idx.index+1}楼：<br/>
+                ${discuss.username}&nbsp;&nbsp;<fmt:formatDate value="${discuss.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/><br/>
+                ${discuss.message}<br/>
+                <hr/>
+                <c:forEach var="replies" items="${reply}">
+                    <c:if test="${replies.parentId == discuss.ownId}">
+                        ${replies.username}&nbsp;&nbsp;<fmt:formatDate value="${replies.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/><br/>
+                        ${replies.message}<br/>
+                    </c:if>
+                </c:forEach>
+                <div class="head">回复</div>
+                <div id="content" style="display:none;">
+                    <form action="/discuss/reply?parentId=${discuss.did}" method="post">
+                        <textarea id="reply" name="message" rows="10" cols="70"></textarea>
+                        <input type="submit" value="回复">
+                    </form>
+                </div>
+                <br/>
+            </c:forEach>
+            <hr/>
+            发表评论：
+            <form action="/discuss/add?articleId=${article.id}" method="post">
+                <div>
+                    <textarea id="message" name="message" rows="10" cols="70"></textarea>
+                    <input type="submit" value="评论">
+                </div>
             </form>
         </div>
-        <br/>
-    </c:forEach>
+    </div>
 </div>
-<div id="Discuss">
-    <form action="/discuss/add?articleId=${article.id}" method="post">
-        <div>
-            <textarea id="message" name="message" rows="10" cols="55"></textarea>
-            <input type="submit" value="评论">
-        </div>
-    </form>
-</div>
+
  <%--<jsp:include page="../base/foot.jsp"/>--%>
 </body>
 </html>

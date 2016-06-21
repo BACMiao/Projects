@@ -33,6 +33,32 @@
     background-color: #999999;
 }
 
+#main #Discuss{
+    width: 780px;
+    float: right;
+    margin:auto;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    /*background-color: #0000FF;*/
+}
+
+#main #Discuss #viewDiscuss{
+    width: 765PX;
+    border: deepskyblue solid 3px;
+    padding-top: 10px;
+    padding-left: 15px;
+    float: right;
+    margin:auto;
+    /*background-color: #FF0000;*/
+
+}
+
+.head{
+    width: 36px;
+    background-color: #999999;
+    border: #999999 solid 3px;
+}
+
 #main #footer{
     width: 1000PX;
     height: 40px;

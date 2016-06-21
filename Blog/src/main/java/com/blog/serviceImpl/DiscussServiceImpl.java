@@ -1,6 +1,7 @@
 package com.blog.serviceImpl;
 
 import com.blog.dao.DiscussDao;
+import com.blog.dao.UserDao;
 import com.blog.model.Discuss;
 import com.blog.model.DiscussCustom;
 import com.blog.model.User;
@@ -23,10 +24,11 @@ import java.util.List;
 public class DiscussServiceImpl implements DiscussService {
 
     DiscussDao discussDao;
+    UserDao userDao;
 
     @Override
     public void addDiscuss(Discuss discuss, HttpSession session, Integer articleId) throws Exception {
-        User user = (User) session.getAttribute("user");
+        User user = userDao.findUserByName((String) session.getAttribute("loginUsername"));
         System.out.println(user.getUid());
         discuss.setUserId(user.getUid());
         discuss.setArticleId(articleId);
@@ -53,7 +55,7 @@ public class DiscussServiceImpl implements DiscussService {
 
     @Override
     public int addReply(Discuss reply, HttpSession session, Integer parentId) throws Exception {
-        User user = (User) session.getAttribute("user");
+        User user = userDao.findUserByName((String) session.getAttribute("loginUsername"));
         Discuss discuss = discussDao.findDiscussById(parentId);
         reply.setUserId(user.getUid());
         reply.setArticleId(discuss.getArticleId());
@@ -71,5 +73,13 @@ public class DiscussServiceImpl implements DiscussService {
     @Autowired
     public void setDiscussDao(DiscussDao discussDao) {
         this.discussDao = discussDao;
+    }
+
+    public UserDao getUserDao() {
+        return userDao;
+    }
+    @Autowired
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
     }
 }
