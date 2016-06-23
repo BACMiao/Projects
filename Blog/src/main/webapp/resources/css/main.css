@@ -1,6 +1,6 @@
 #main{
     width: 1000PX;
-    height: auto;
+    height: 1330px;
     padding-top: 7px;
     padding-bottom: 7px;
     margin:auto;
@@ -12,7 +12,7 @@
     width: 200px;
     height: 600px;
     float: left;
-    background-color: white;
+    background-color: #D8DFEA;
 }
 
 #main #right{
@@ -20,7 +20,7 @@
     width: 780px;
     height: auto;
     float: right;
-    background-color: white;
+    background-color: #D8DFEA;
 }
 
 #main #Article{
@@ -30,7 +30,7 @@
     padding-bottom: 7px;
     float: right;
     margin:auto;
-    background-color: #999999;
+    background-color: #D8DFEA;
 }
 
 #main #Discuss{
@@ -39,7 +39,7 @@
     margin:auto;
     padding-top: 7px;
     padding-bottom: 7px;
-    /*background-color: #0000FF;*/
+
 }
 
 #main #Discuss #viewDiscuss{
@@ -49,7 +49,7 @@
     padding-left: 15px;
     float: right;
     margin:auto;
-    /*background-color: #FF0000;*/
+    background-color: #D8DFEA;
 
 }
 

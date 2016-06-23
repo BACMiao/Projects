@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 /**
  *
  * Created by Black on 2016/6/4.
@@ -23,12 +25,21 @@ public class AdminController {
     }
 
     @RequestMapping("/exist")
-    public String existAdmin(Admin admin) throws Exception{
+    public String existAdmin(Admin admin, HttpSession session) throws Exception{
         if (adminService.existAdmin(admin)){
+            session.setAttribute("adminName", admin.getUsername());
             return "admin/success";
         }else {
             return "admin/failure";
         }
+    }
+
+    @RequestMapping("/adminLogout")
+    public String adminLogout(HttpSession session){
+        if (session.getAttribute("adminName")!=null){
+            session.removeAttribute("adminName");
+        }
+        return "redirect:/";
     }
 
     @RequestMapping("/tree")

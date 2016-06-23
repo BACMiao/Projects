@@ -25,7 +25,7 @@ public class UserController {
     @RequestMapping("/register")
     public String register()
     {
-        return "user/saveUser";
+        return "user/register";
     }
 
     @RequestMapping("/saveUser")

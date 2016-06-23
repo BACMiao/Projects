@@ -64,11 +64,8 @@
             <td><input name="birthday" type="text" onclick="new
             Calendar().show(this);" readonly="readonly"/></td>
         </tr>
-
     </table>
     <input type="submit" value="注册" id="sub"/>
-    <div id="usernamemsg"></div>
-    <div id="passwordmsg"></div>
 </form>
 </body>
 </html>

@@ -15,16 +15,6 @@
     <link href="${ctx}/resources/css/main.css" rel="stylesheet" type="text/css"/>
     <title>BApocalypse</title>
     <script type="text/javascript">
-//        $(function(){
-//            $("#viewDiscuss h5.head").bind("click", function(){
-//                var $content = $(this).next();
-//                if ($content.is(":visible")){
-//                    $content.hide();
-//                }else {
-//                    $content.show();
-//                }
-//            });
-//        })
     </script>
 </head>
 <body>
@@ -43,7 +33,7 @@
                 <hr style="border-top-style:dotted"/>
             </c:forEach>
         </div>
-        <%--<jsp:include page="base/foot.jsp"/>--%>
+        <jsp:include page="base/foot.jsp"/>
     </div>
 
 </body>

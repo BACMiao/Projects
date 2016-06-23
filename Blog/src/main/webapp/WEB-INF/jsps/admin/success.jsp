@@ -21,8 +21,8 @@
             <a href="/article/add">添加文章</a></div>
         <div id="title">后台管理系统</div>
         <div id="user_info">
-            <div id="welcome">欢迎${sessionScope.loginUserName}使用本系统</div>
-            <div id="logout"><a href="/users/Users_logout.action">安全退出</a></div>
+            <div id="welcome">欢迎${sessionScope.adminName}使用本系统</div>
+            <div id="logout"><a href="/admin/adminLogout">安全退出</a></div>
         </div>
     </div>
     <div id="navigator">
