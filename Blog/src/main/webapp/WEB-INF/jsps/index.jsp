@@ -10,12 +10,9 @@
 <html>
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
-    <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
     <link href="${ctx}/resources/css/base.css" rel="stylesheet" type="text/css"/>
     <link href="${ctx}/resources/css/main.css" rel="stylesheet" type="text/css"/>
     <title>BApocalypse</title>
-    <script type="text/javascript">
-    </script>
 </head>
 <body>
     <jsp:include page="base/head.jsp"/>
@@ -36,5 +33,14 @@
         <jsp:include page="base/foot.jsp"/>
     </div>
 
+    <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
+    <script src="${ctx}/resources/js/bootstrap.js"></script>
+    <script>
+        $(function(){
+            $(".btn").click(function(){
+                $("#mymodal").modal("toggle");
+            });
+        });
+    </script>
 </body>
 </html>

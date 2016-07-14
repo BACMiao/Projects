@@ -14,6 +14,7 @@
     <title>注册</title>
     <script type="text/javascript" src="${ctx}/resources/js/Calendar3.js"></script>
     <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
+    <link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 
     <script type="text/javascript">
         $(function(){
@@ -56,7 +57,11 @@
         </tr>
         <tr>
             <td>性别</td>
-            <td><input name="sex" type="text" /></td>
+            <select class="form-control" name="sex">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
         </tr>
 
         <tr>
