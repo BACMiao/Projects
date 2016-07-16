@@ -23,7 +23,7 @@
             </div>
             <div id="edit">
                 欢迎您，${sessionScope.loginUsername}
-                <a href="/user/editUser?uid=2" id="editUser">编辑信息</a>
+                <a href="/user/editUser?username=${sessionScope.loginUsername}" id="editUser">编辑信息</a>
                 <a href="/user/userLogout">安全退出</a>
             </div>
             <div id="registerDiv"></div>

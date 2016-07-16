@@ -44,15 +44,15 @@ public class UserController {
         if (userService.existUser(user)){
             user = userService.findUserByName(user.getUsername());
             session.setAttribute("loginUsername", user.getUsername());
-            return "user/success";
+            return "redirect:/";
         }else {
             return "user/failure";
         }
     }
 
     @RequestMapping("/editUser")
-    public String editUser(@RequestParam(value = "uid", required = true) Integer uid, Model model) throws Exception{
-        User user = userService.findUserById(uid);
+    public String editUser(@RequestParam(value = "username", required = true) String username, Model model) throws Exception{
+        User user = userService.findUserByName(username);
         model.addAttribute("user", user);
         System.out.println(user);
         return "user/editUser";
