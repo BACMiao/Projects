@@ -26,21 +26,20 @@
                 <a href="/user/editUser?uid=2" id="editUser">编辑信息</a>
                 <a href="/user/userLogout">安全退出</a>
             </div>
-            <div id="logindiv"></div>
+            <div id="registerDiv"></div>
+            <div id="loginDiv"></div>
         </div>
     </div>
 
     <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
     <script src="${ctx}/resources/js/bootstrap.js"></script>
-    <script>
+    <script type="text/javascript">
         $(function(){
             $("#register").click(function(){
-//                $('#logindiv').load('/user/register');
-//                $("user/register").modal("toggle");
+                $('#registerDiv').load('/user/register');
             });
             $("#login").click(function(){
-                $('#logindiv').load('/user/login').modal("toggle");
-//                $("#mymodal").modal("toggle");
+                $('#loginDiv').load('/user/login');
             });
         });
 

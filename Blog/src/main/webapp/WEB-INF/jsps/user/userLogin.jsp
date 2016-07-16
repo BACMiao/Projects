@@ -15,24 +15,24 @@
     <link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<form action="/user/exist" class="form col-md-12 center-block" method="post">
-        <div id="loginModal" class="modal show" style="width:auto;">
-            <div class="modal-dialog modal-sm">
+<form action="/user/exist" method="post">
+        <div id="loginModal" class="modal show text-center">
+            <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                        <h1 class="text-center text-primary">登录</h1>
+                        <h2 class="text-primary">登录</h2>
                     </div>
                     <div class="modal-body">
                             <div class="form-group">
-                                <input type="text" class="form-control input-lg" name="username" style="height:40px; width: 360px; font-size: large" placeholder="用户名" >
+                                <input type="text" class="form-control input-lg" name="username" style="height:40px; width: 360px; font-size: large" placeholder="用户名" />
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control input-lg" name="password" style="height:40px; width: 360px; font-size: large" placeholder="登录密码">
+                                <input type="password" class="form-control input-lg" name="password" style="height:40px; width: 360px; font-size: large" placeholder="登录密码"/>
                             </div>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary btn-lg btn-block" style="height: 50px; width: 360px; font-size: large" type="submit">立刻登录</button>
+                        <button class="btn btn-primary btn-lg btn-block" style="width: 360px; height: 50px; font-size: large" type="submit">立刻登录</button>
                         <span><a href="#">找回密码</a></span>
                     </div>
                 </div>
@@ -42,5 +42,14 @@
 
 <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
 <script src="${ctx}/resources/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+    $('#loginModal').modal({backdrop: 'static', keyboard: false}).css({
+        width: 'auto',
+        'margin-left': function () {
+            return -($(this).width() / 2);
+        }
+    });
+</script>
 </body>
 </html>
