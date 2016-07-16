@@ -22,18 +22,7 @@ public class UploadUtil {
             String newFileName = article.getCategoryId() + "-" + article.getTitle()
                     + "-" + originalFileName;
             String realPathDir = request.getSession().getServletContext().getRealPath("/");
-            String path = "";
-            for (String s: realPathDir.split("\\\\")) {
-                if (s.equalsIgnoreCase("target"))
-                {
-                    break;
-                }
-                else {
-                    s = s + "\\";
-                }
-                path += s;
-            }
-            String articlePath = path +"\\src\\main\\webapp\\resources\\article\\" + newFileName;
+            String articlePath = realPathDir +"resources\\article\\" + newFileName;
             File newfile = new File(articlePath);
             if (!newfile.exists())
                 newfile.mkdirs();

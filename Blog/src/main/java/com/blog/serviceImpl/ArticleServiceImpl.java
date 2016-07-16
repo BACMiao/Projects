@@ -41,19 +41,7 @@ public class ArticleServiceImpl implements ArticleService {
         //数据库的路径
         String Path = article.getArticlePath();
         String realPathDir = request.getSession().getServletContext().getRealPath("/");
-        String path = "";
-        for (String s: realPathDir.split("\\\\")) {
-            if (s.equalsIgnoreCase("target"))
-            {
-                break;
-            }
-            else {
-                s = s + "\\";
-            }
-            path += s;
-        }
-        //真实文件路径
-        String articlePath = path + "src\\main\\webapp\\" + Path;
+        String articlePath = realPathDir + Path;
         System.out.println(articlePath);
         String blog = MarkdownUtil.read(articlePath);
         return blog;
