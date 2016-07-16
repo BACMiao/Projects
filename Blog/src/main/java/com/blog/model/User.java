@@ -10,8 +10,6 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private int sex;
-    private Date birthday;
 
     public int getUid() {
         return uid;
@@ -45,22 +43,6 @@ public class User {
         this.email = email;
     }
 
-    public int getSex() {
-        return sex;
-    }
-
-    public void setSex(int sex) {
-        this.sex = sex;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
-
     @Override
     public String toString() {
         return "User{" +
@@ -68,8 +50,6 @@ public class User {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", sex=" + sex +
-                ", birthday=" + birthday +
                 '}';
     }
 }

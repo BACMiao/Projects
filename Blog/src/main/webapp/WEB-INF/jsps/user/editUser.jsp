@@ -28,15 +28,6 @@
             <td>邮箱</td>
             <td><input name="email" type="text" value="${user.email}" /></td>
         </tr>
-        <tr>
-            <td>性别</td>
-            <td><input name="sex" type="text" value="${user.sex}" /></td>
-        </tr>
-
-        <tr>
-            <td>生日</td>
-            <td><input name="birthday" type="text" value="<fmt:formatDate value="${user.birthday}" pattern="yyyy-MM-dd"/>" /></td>
-        </tr>
 
     </table>
     <input type="submit" value="修改"/>

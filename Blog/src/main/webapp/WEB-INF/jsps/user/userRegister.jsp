@@ -43,38 +43,6 @@
             </div>
         </div>
     </div>
-
-    <%----%>
-    <%--<table width="18%" border="1">--%>
-        <%--<caption>用户注册</caption>--%>
-        <%--<tr>--%>
-            <%--<td>用户名</td>--%>
-            <%--<td><input name="username" type="text" id="username" class="required"/></td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<td>密码</td>--%>
-            <%--<td><input name="password" type="password" id="password" class="required"/></td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<td>邮箱</td>--%>
-            <%--<td><input name="email" type="text" id="email" class="required"/></td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<td>性别</td>--%>
-            <%--<select class="form-control" name="sex">--%>
-                <%--<option>1</option>--%>
-                <%--<option>2</option>--%>
-                <%--<option>3</option>--%>
-            <%--</select>--%>
-        <%--</tr>--%>
-
-        <%--<tr>--%>
-            <%--<td>生日</td>--%>
-            <%--<td><input name="birthday" type="text" onclick="new--%>
-            <%--Calendar().show(this);" readonly="readonly"/></td>--%>
-        <%--</tr>--%>
-    <%--</table>--%>
-    <%--<input type="submit" value="注册" id="sub"/>--%>
 </form>
 
 <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
