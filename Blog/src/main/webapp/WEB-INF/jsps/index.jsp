@@ -15,32 +15,31 @@
     <title>BApocalypse</title>
 </head>
 <body>
-    <jsp:include page="base/head.jsp"/>
-    <jsp:include page="base/home.jsp"/>
-    <div id="main">
-        <jsp:include page="base/left.jsp"/>
-        <div id="right">
-            <br/>
-            &nbsp;文章列表：
-            <hr/>
-            <c:forEach var="article" items="${articles}" >
-                <a href="/article/viewArticle?id=${article.id} " id="a1" style="text-decoration: none;" class="article">[${article.categoryName}]&nbsp;${article.title}</a>
-                <p class="describe">${article.articleDescribe}</p>
-                <div class="bottom"><fmt:formatDate value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>|评论|博客分类：${article.categoryName}</div>
-                <hr style="border-top-style:dotted"/>
-            </c:forEach>
+    <div id="background">
+        <%--<jsp:include page="base/head.jsp"/>--%>
+        <%--<jsp:include page="base/home.jsp"/>--%>
+        <jsp:include page="base/tooltip.jsp"/>
+        <div id="main">
+            <%--<jsp:include page="base/left.jsp"/>--%>
+            <div id="right">
+                <br/>
+                &nbsp;文章列表：
+                <hr/>
+                <c:forEach var="article" items="${articles}" >
+                    <a href="/article/viewArticle?id=${article.id} " id="a1" style="text-decoration: none;" class="article">[${article.categoryName}]&nbsp;${article.title}</a>
+                    <p class="describe">${article.articleDescribe}</p>
+                    <div class="bottom"><fmt:formatDate value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>|评论|博客分类：${article.categoryName}</div>
+                    <hr style="border-top-style:dotted"/>
+                </c:forEach>
+            </div>
+            <jsp:include page="base/foot.jsp"/>
         </div>
-        <jsp:include page="base/foot.jsp"/>
     </div>
 
     <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
     <script src="${ctx}/resources/js/bootstrap.js"></script>
     <script>
-        $(function(){
-            $(".btn").click(function(){
-                $("#mymodal").modal("toggle");
-            });
-        });
+
     </script>
 </body>
 </html>

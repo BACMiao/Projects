@@ -22,12 +22,13 @@
                 <a data-toggle="modal" href="#" id="login">登录</a>
             </div>
             <div id="edit">
-                欢迎您，${sessionScope.loginUsername}
-                <a href="/user/editUser?username=${sessionScope.loginUsername}" id="editUser">编辑信息</a>
+                欢迎您，${sessionScope.loginUsername}&nbsp;
+                <a data-toggle="modal" href="#" id="editUser">编辑信息</a>
                 <a href="/user/userLogout">安全退出</a>
             </div>
             <div id="registerDiv"></div>
             <div id="loginDiv"></div>
+            <div id="editDiv"></div>
         </div>
     </div>
 
@@ -51,6 +52,12 @@
             else if (loginUsername!='null'){
                 $("#userLogin").hide();
             }
+        });
+
+        $(function(){
+            $("#editUser").click(function(){
+                $('#editDiv').load('/user/editUser?username=${sessionScope.loginUsername}');
+            });
         });
     </script>
 </body>

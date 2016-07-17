@@ -1,3 +1,6 @@
-body{
-    background-color: paleturquoise;
+#background{
+    background: -webkit-linear-gradient(#5bc0de , #babac4, #7ab5d3, #babac4, #4bb1cf); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#5bc0de , #babac4, #7ab5d3, #babac4, #4bb1cf); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#5bc0de , #babac4, #7ab5d3, #babac4, #4bb1cf); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#5bc0de , #babac4, #7ab5d3, #babac4, #4bb1cf); /* 标准的语法（必须放在最后） */
 }

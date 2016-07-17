@@ -15,7 +15,7 @@
     <link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<form action="/user/updateUser?username=${sessionScope.loginUsername}" method="post">
+<form action="/user/updateUser?uid=${user.uid}" method="post">
     <div id="editModal" class="modal show text-center">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -35,28 +35,23 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary btn-lg btn-block" style="width: 360px; height: 50px; font-size: large" type="submit">立刻登录</button>
-                    <span><a href="#">找回密码</a></span>
+                    <button class="btn btn-primary btn-lg btn-block" style="width: 360px; height: 50px; font-size: large" type="submit">修改完成</button>
                 </div>
             </div>
         </div>
     </div>
-    <%--<table width="25%" border="1">--%>
-        <%--<tr>--%>
-            <%--<td>用户名</td>--%>
-            <%--<td><input name="username" type="text" value="${user.username}" /></td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<td>密码</td>--%>
-            <%--<td><input name="password" type="password" value="${user.password}" /></td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<td>邮箱</td>--%>
-            <%--<td><input name="email" type="text" value="${user.email}" /></td>--%>
-        <%--</tr>--%>
-
-    <%--</table>--%>
-    <%--<input type="submit" value="修改"/>--%>
 </form>
+
+<script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
+<script src="${ctx}/resources/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+    $('#editModal').modal({backdrop: 'static', keyboard: false}).css({
+        width: 'auto',
+        'margin-left': function () {
+            return -($(this).width() / 2);
+        }
+    });
+</script>
 </body>
 </html>
