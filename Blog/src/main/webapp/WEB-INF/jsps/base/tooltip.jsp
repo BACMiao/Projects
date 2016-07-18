@@ -18,10 +18,19 @@
 <body>
     <div class="col-xs-3 pull-right" id="myScrollspy">
         <ul class="nav nav-tabs nav-stacked navbar-right" data-spy="affix">
-            <li><a><span class="glyphicon glyphicon-user"></span></a></li>
-            <li><a><span class="glyphicon glyphicon-qrcode"></span></a></li>
-            <li><a href="#" id="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
+            <li><a id="user-message" data-toggle="tooltip" data-placement="top" title="作者信息">
+                <span class="glyphicon glyphicon-user"></span>
+            </a></li>
+            <li><a id="two-dimension" data-toggle="tooltip" data-placement="top" title="二维码">
+                <span class="glyphicon glyphicon-qrcode"></span>
+            </a></li>
+            <li><a href="#" id="back-to-top" data-toggle="tooltip" data-placement="top" title="返回顶部">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a></li>
         </ul>
+    </div>
+    <div id="two-dimension-picture">
+        <img src="http://7xv9yx.com1.z0.glb.clouddn.com/bapocalypseHead.png">
     </div>
 
 <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
@@ -32,7 +41,7 @@
         //当滚动条的位置处于距顶部200像素以下时，跳转链接出现，否则消失
         $(function () {
             $(window).scroll(function(){
-                if ($(window).scrollTop()>200){
+                if ($(window).scrollTop()>500){
                     $("#back-to-top").fadeIn(1000);
                 }
                 else
@@ -46,6 +55,22 @@
                 $('body,html').animate({scrollTop:0},1000);
                 return false;
             });
+        });
+    });
+
+    $(document).ready(function(){
+        $("#two-dimension-picture").hide();
+        $("#user-message").mouseenter(function(){
+            $("").show();
+        });
+        $("#user-message").mouseleave(function(){
+            $("").hide();
+        });
+        $("#two-dimension").mouseenter(function(){
+            $("#two-dimension-picture").show();
+        });
+        $("#two-dimension").mouseleave(function(){
+            $("#two-dimension-picture").hide();
         });
     });
 </script>

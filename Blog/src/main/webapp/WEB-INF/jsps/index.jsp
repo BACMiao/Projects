@@ -18,7 +18,7 @@
     <div id="background">
         <%--<jsp:include page="base/head.jsp"/>--%>
         <%--<jsp:include page="base/home.jsp"/>--%>
-        <jsp:include page="base/tooltip.jsp"/>
+
         <div id="main">
             <%--<jsp:include page="base/left.jsp"/>--%>
             <div id="right">
@@ -32,6 +32,7 @@
                     <hr style="border-top-style:dotted"/>
                 </c:forEach>
             </div>
+            <jsp:include page="base/tooltip.jsp"/>
             <jsp:include page="base/foot.jsp"/>
         </div>
     </div>

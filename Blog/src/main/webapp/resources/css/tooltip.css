@@ -26,3 +26,13 @@ ul.nav-tabs.affix{
     bottom: 200px;
     right: 20px;
 }
+
+#two-dimension-picture{
+    width:200px;
+    height:auto;
+    box-shadow: -5px -5px 5px #aaaaaa;
+    border:2px white solid;
+    position:fixed;
+    bottom: 150px;;
+    right: 80px;
+}
