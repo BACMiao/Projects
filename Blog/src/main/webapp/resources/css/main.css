@@ -2,6 +2,8 @@
     width: 1000PX;
     height: 1330px;
     padding-top: 7px;
+    background-color: #d9edf7;
+    box-shadow: -8px 0px 8px #aaaaaa;
     padding-bottom: 7px;
     margin:auto;
     position:relative;

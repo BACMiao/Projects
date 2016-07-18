@@ -41,7 +41,6 @@
 </head>
 <body>
  <jsp:include page="../base/head.jsp"/>
- <jsp:include page="../base/home.jsp"/>
 <div id="main">
     <jsp:include page="../base/left.jsp"/>
     <div id="Article"></div>

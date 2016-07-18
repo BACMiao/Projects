@@ -1,33 +1,41 @@
 #header{
     width: 1000PX;
-    height: 100px;
-    background-color: white;
+    height: 560px;
+    background: url("http://7xv9yx.com1.z0.glb.clouddn.com/head.jpg");
+    background-size: 100%;
     margin:auto;
-}
-
-#header #logo{
-    float: left;
-    width: 500px;
-    height: 100px;
-}
-
-#header #user{
-    float: right;
-    width: 500px;
-    height: 100px;
-    padding-top: 2cm;
     position:absolute;
-    right:0px;
-    /*background-color: blue;*/
+    text-align:center;
+    top: 0;
+}
+#header #user{
+    position:absolute;
+    text-align:center;
+    top: 50px;
+    margin:0px 75px 0px 75px;
+
+
+}
+ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+li{
+    display:inline;
 }
 
-#header #user #userLogin{
-    padding-left: 100px;
-    width: 200px;
-    /*background-color: #FF0000;*/
+a.dh:link,a.dh:visited
+{
+    width:120px;
+    font-weight:bold;
+    color: white;
+    font-size: large;
+    text-align:center;
+    padding:10px 45px 0px 45px;
+    text-decoration:none;
+    text-transform:uppercase;
 }
 
-#header #user #edit{
-    padding-left: 50px;
-    /*background-color: #FF0000;*/
-}
+

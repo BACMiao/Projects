@@ -11,7 +11,6 @@
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
     <title>tooltip</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="${ctx}/resources/css/tooltip.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -19,13 +18,13 @@
     <div class="col-xs-3 pull-right" id="myScrollspy">
         <ul class="nav nav-tabs nav-stacked navbar-right" data-spy="affix">
             <li><a id="user-message" data-toggle="tooltip" data-placement="top" title="作者信息">
-                <span class="glyphicon glyphicon-user"></span>
+                <i class="icon-user"></i>
             </a></li>
             <li><a id="two-dimension" data-toggle="tooltip" data-placement="top" title="二维码">
-                <span class="glyphicon glyphicon-qrcode"></span>
+                <i class=" icon-qrcode"></i>
             </a></li>
             <li><a href="#" id="back-to-top" data-toggle="tooltip" data-placement="top" title="返回顶部">
-                <span class="glyphicon glyphicon-chevron-up"></span>
+                <i class=" icon-chevron-up"></i>
             </a></li>
         </ul>
     </div>
