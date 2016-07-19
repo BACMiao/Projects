@@ -9,20 +9,16 @@
     position:relative;
 }
 
-#main #left{
-    border: deepskyblue solid 3px;
-    width: 200px;
-    height: 600px;
-    float: left;
-    background-color: #D8DFEA;
-}
-
-#main #right{
-    border: deepskyblue solid 3px;
-    width: 780px;
-    height: auto;
+#main #maintain{
+    position:relative;
     float: right;
-    background-color: #D8DFEA;
+    right: 80px;
+    top: 650px;
+}
+#slidershow{
+    width: 450PX;
+    height: 280px;
+    box-shadow: 4px 2px 8px #aaaaaa;
 }
 
 #main #Article{
@@ -55,12 +51,6 @@
 
 }
 
-.head{
-    width: 36px;
-    background-color: #999999;
-    border: #999999 solid 3px;
-}
-
 #main #footer{
     width: 1000PX;
     height: 40px;
@@ -69,24 +59,6 @@
     margin:auto;
     position: absolute;
     bottom: 0px;
-}
-
-#main #left #portrait{
-    margin:auto;
-    padding-top: 7px;
-    padding-bottom: 14px;
-    padding-left: 9px;
-
-}
-#main #left #category{
-    padding-left: 9px;
-}
-
-#main #left #portrait img{
-    height:240px;
-    width:180px;
-    border: #999999 solid 1px;
-    margin:auto;
 }
 
 div.bottom{
