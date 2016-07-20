@@ -19,6 +19,7 @@
     <div id="background">
         <div id="main">
             <jsp:include page="base/head.jsp"/>
+            <jsp:include page="base/search.jsp"/>
             <div id="maintain">
                 <div id="slidershow" class="carousel slide" data-wrap="false" >
                     <!-- 设置图片轮播的顺序 -->
@@ -52,8 +53,14 @@
                             <img src="${ctx}/resources/image/carousel3.jpg"/>
                         </div>
                     </div>
-                    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                    <a class="carousel-control left" href="#" data-slide="prev" id="left">&lsaquo;</a>
+                    <a class="carousel-control right" href="#" data-slide="next" id="right">&rsaquo;</a>
+                </div>
+                <div id="motto">
+                    <h2>座右铭</h2>
+                    <hr>
+                    <p class="motto">想象有两个世界，一个世界中有你，一个世界中没有你，让两者的difference最大，这就是你一生的意义。</p>
+                    <p class="motto">——引自李开复自传《世界因你而不同》</p>
                 </div>
             </div>
             <%--<div id="right">--%>
@@ -67,6 +74,7 @@
                     <%--<hr style="border-top-style:dotted"/>--%>
                 <%--</c:forEach>--%>
             <%--</div>--%>
+
             <jsp:include page="base/tooltip.jsp"/>
 
             <%--<jsp:include page="base/foot.jsp"/>--%>
@@ -80,13 +88,26 @@
     <script>
         $(function(){
             $("#slidershow").carousel({
-                interval:4000
+                interval:3000
             });
             $("#slidershow a.left").click(function(){
                 $(".carousel").carousel("prev");
             });
             $("#slidershow a.right").click(function(){
                 $(".carousel").carousel("next");
+            });
+        });
+
+        $(document).ready(function(){
+            $("#left").hide();
+            $("#right").hide();
+            $("#slidershow").mouseenter(function(){
+                $("#left").show();
+                $("#right").show();
+            });
+            $("#slidershow").mouseleave(function(){
+                $("#left").hide();
+                $("#right").hide();
             });
         });
     </script>

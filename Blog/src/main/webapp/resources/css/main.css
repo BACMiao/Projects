@@ -2,7 +2,7 @@
     width: 1000PX;
     height: 1330px;
     padding-top: 7px;
-    background-color: #d9edf7;
+    background-color: white;
     box-shadow: -8px 0px 8px #aaaaaa;
     padding-bottom: 7px;
     margin:auto;
@@ -10,87 +10,35 @@
 }
 
 #main #maintain{
-    position:relative;
-    float: right;
-    right: 80px;
-    top: 650px;
+    width: 900px;
+    height: 285px;
+    position:absolute;
+    background-color: #f2f3f7;
+    left: 50px;
+    top: 625px;
+    box-shadow: 6px 6px 8px #aaaaaa;
 }
 #slidershow{
     width: 450PX;
-    height: 280px;
-    box-shadow: 4px 2px 8px #aaaaaa;
+    height: 250px;
+    float: left;
+    margin: 15px;
+
 }
 
-#main #Article{
-    width: 780PX;
-    border: deepskyblue solid 3px;
-    padding-top: 7px;
-    padding-bottom: 7px;
+#motto{
+    /*background-color: #5bb75b;*/
+    width: 380PX;
+    height: 253px;
     float: right;
-    margin:auto;
-    background-color: #D8DFEA;
+    margin: 15px;
+    font-family: 宋体;
 }
-
-#main #Discuss{
-    width: 780px;
-    float: right;
-    margin:auto;
-    padding-top: 7px;
-    padding-bottom: 7px;
-
-}
-
-#main #Discuss #viewDiscuss{
-    width: 765PX;
-    border: deepskyblue solid 3px;
-    padding-top: 10px;
-    padding-left: 15px;
-    float: right;
-    margin:auto;
-    background-color: #D8DFEA;
-
-}
-
-#main #footer{
-    width: 1000PX;
-    height: 40px;
-    background-color: white;
+#motto h2{
     text-align:center;
-    margin:auto;
-    position: absolute;
-    bottom: 0px;
 }
 
-div.bottom{
-    padding-left: 14px;
-    color: cornflowerblue;
-    font-size: 14px;
-}
-
-p.describe{
-    padding-left: 14px;
-    padding-right: 14px;
-    font-size: 15px;
-}
-
-a.article:link, a.article:visited, a.article:active{
-    display:block;
-    font-weight:bold;
-    width:240px;
-    font-size:17px;
-    font-family: sans-serif;
-    padding:4px;
-    color: blue;
-    text-decoration:none;
-}
-a.article:hover{
-    display:block;
-    font-weight:bold;
-    font-size:17px;
-    font-family: sans-serif;
-    color:#FFFFFF;
-    background-color:blue;
-    width:240px;
-    padding:4px;
-    text-decoration:none;
+.motto{
+    font-size: 18px;
+    margin: 15px;
 }
