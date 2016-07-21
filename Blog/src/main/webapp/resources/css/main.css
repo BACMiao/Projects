@@ -1,6 +1,6 @@
 #main{
     width: 1000PX;
-    height: 1330px;
+    height: 2200px;
     padding-top: 7px;
     background-color: white;
     box-shadow: -8px 0px 8px #aaaaaa;
@@ -9,7 +9,7 @@
     position:relative;
 }
 
-#main #maintain{
+#main #picture{
     width: 900px;
     height: 285px;
     position:absolute;
@@ -27,7 +27,6 @@
 }
 
 #motto{
-    /*background-color: #5bb75b;*/
     width: 380PX;
     height: 253px;
     float: right;
@@ -41,4 +40,24 @@
 .motto{
     font-size: 18px;
     margin: 15px;
+}
+
+#main #body{
+    width: 850px;
+    height: 1180px;
+    position:absolute;
+    top: 965px;
+    left: 75px;
+    background-color: #f2f3f7;
+    border: 2px solid  #84b5cf;
+    box-shadow: 6px 6px 8px #aaaaaa;
+    word-wrap: break-word;
+    word-break: normal;
+}
+#main #body #article-title{
+    margin: 20px 50px 10px 50px;
+}
+
+.article{
+    font-size: x-large;
 }

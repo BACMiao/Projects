@@ -1,0 +1,20 @@
+#main #article{
+    width: 850px;
+    height: auto;
+    position:absolute;
+    top: 630px;
+    left: 75px;
+    background-color: #f2f3f7;
+    border: 2px solid  #84b5cf;
+    box-shadow: 6px 6px 8px #aaaaaa;
+}
+
+#main #article #article-body{
+    margin: 20px 50px 10px 50px;
+    height: auto;
+    width: 750px;
+}
+
+#main #article #discuss{
+    margin: 20px 50px 10px 50px;
+}

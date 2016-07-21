@@ -20,7 +20,8 @@
         <div id="main">
             <jsp:include page="base/head.jsp"/>
             <jsp:include page="base/search.jsp"/>
-            <div id="maintain">
+
+            <div id="picture">
                 <div id="slidershow" class="carousel slide" data-wrap="false" >
                     <!-- 设置图片轮播的顺序 -->
                     <ol class="carousel-indicators">
@@ -63,23 +64,24 @@
                     <p class="motto">——引自李开复自传《世界因你而不同》</p>
                 </div>
             </div>
-            <%--<div id="right">--%>
-                <%--<br/>--%>
-                <%--&nbsp;文章列表：--%>
-                <%--<hr/>--%>
-                <%--<c:forEach var="article" items="${articles}" >--%>
-                    <%--<a href="/article/viewArticle?id=${article.id} " id="a1" style="text-decoration: none;" class="article">[${article.categoryName}]&nbsp;${article.title}</a>--%>
-                    <%--<p class="describe">${article.articleDescribe}</p>--%>
-                    <%--<div class="bottom"><fmt:formatDate value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>|评论|博客分类：${article.categoryName}</div>--%>
-                    <%--<hr style="border-top-style:dotted"/>--%>
-                <%--</c:forEach>--%>
-            <%--</div>--%>
+
+            <div id="body">
+                <div id="article-title">
+                    <h3>文章列表：</h3>
+                    <hr/>
+                    <c:forEach var="article" items="${articles}" >
+                        <a href="/article/viewArticle?id=${article.id} " id="a1" style="text-decoration: none;" class="article">[${article.categoryName}]&nbsp;${article.title}</a>
+                        <br/>
+                        <p class="describe">${article.articleDescribe}</p>
+                        <div class="bottom"><fmt:formatDate value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>|评论|博客分类：${article.categoryName}</div>
+                        <hr style="border-top-style:dotted"/>
+                    </c:forEach>
+                </div>
+            </div>
 
             <jsp:include page="base/tooltip.jsp"/>
-
-            <%--<jsp:include page="base/foot.jsp"/>--%>
+            <jsp:include page="base/foot.jsp"/>
         </div>
-
     </div>
 
 

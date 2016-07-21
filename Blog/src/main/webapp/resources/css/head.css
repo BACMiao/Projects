@@ -26,8 +26,7 @@ li{
     display:inline;
 }
 
-a.dh:link,a.dh:visited
-{
+a.dh:link,a.dh:visited{
     width:120px;
     font-weight:bold;
     color: white;

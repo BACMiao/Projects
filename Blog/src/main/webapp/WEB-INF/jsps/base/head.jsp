@@ -17,7 +17,7 @@
     <div id="header">
         <div id="user">
             <ul>
-                <li><a href="#" class="dh"><i class="icon-home icon-white"></i>&nbsp;本站</a></li>
+                <li><a href="/" class="dh"><i class="icon-home icon-white"></i>&nbsp;本站</a></li>
                 <li><a href="#" class="dh"><i class="icon-list icon-white"></i>&nbsp;类别</a></li>
                 <li><a href="#" class="dh">您还未登陆！</a></li>
                 <li><a data-toggle="modal" href="#" id="register" class="dh"><i class="icon-road icon-white"></i>&nbsp;注册</a></li>
