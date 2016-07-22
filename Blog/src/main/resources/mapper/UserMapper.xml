@@ -19,11 +19,7 @@
 
     <!-- 增加用户，parameterType：指定的输入参数类型是model，#{}中指定model的属性名（OGNL来获取）-->
     <insert id="insertUser" parameterType="com.blog.model.User">
-        <!-- LAST_INSERT_ID()：得到刚insert进去的主键值-->
-        <selectKey keyProperty="uid" order="AFTER" resultType="int">
-            SELECT LAST_INSERT_ID()
-        </selectKey>
-        INSERT INTO user(uid,username, password, email) VALUES (#{uid},#{username},#{password},#{email})
+        INSERT INTO user(uid,username, password, email, salt) VALUES (#{uid},#{username},#{password},#{email}, #{salt})
     </insert>
     
     <delete id="deleteUserById" parameterType="int">

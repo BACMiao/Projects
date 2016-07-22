@@ -1,15 +1,16 @@
 package com.blog.model;
 
-import java.util.Date;
+import java.io.Serializable;
 
 /**
  * Created by Black on 2016/5/21.
  **/
-public class User {
+public class User implements Serializable{
     private int uid;
     private String username;
     private String password;
     private String email;
+    private String salt;
 
     public int getUid() {
         return uid;
@@ -43,13 +44,12 @@ public class User {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "uid=" + uid +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public String getSalt() {
+        return salt;
     }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
 }
