@@ -61,7 +61,7 @@
                     <h2>座右铭</h2>
                     <hr>
                     <p class="motto">想象有两个世界，一个世界中有你，一个世界中没有你，让两者的difference最大，这就是你一生的意义。</p>
-                    <p class="motto">——引自李开复自传《世界因你而不同》</p>
+                    <p class="motto">&nbsp;——引自李开复自传《世界因你而不同》</p>
                 </div>
             </div>
 
@@ -73,12 +73,11 @@
                         <a href="/article/viewArticle?id=${article.id} " id="a1" style="text-decoration: none;" class="article">[${article.categoryName}]&nbsp;${article.title}</a>
                         <br/>
                         <p class="describe">${article.articleDescribe}</p>
-                        <div class="bottom"><fmt:formatDate value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>|评论|博客分类：${article.categoryName}</div>
+                        <div class="bottom"><fmt:formatDate value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>|评论(0)|浏览(0)|博客分类：${article.categoryName}</div>
                         <hr style="border-top-style:dotted"/>
                     </c:forEach>
                 </div>
             </div>
-
             <jsp:include page="base/tooltip.jsp"/>
             <jsp:include page="base/foot.jsp"/>
         </div>
