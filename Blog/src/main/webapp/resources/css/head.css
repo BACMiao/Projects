@@ -9,20 +9,18 @@
     top: 0;
 }
 #header #user{
-    position:absolute;
+    position:relative;
     text-align:center;
     top: 50px;
     margin:0px 75px 0px 75px;
-
-
 }
-ul{
+#header #user ul{
     list-style-type:none;
     margin:0;
     padding:0;
     text-align:center;
 }
-li{
+#header #user li{
     display:inline;
 }
 
