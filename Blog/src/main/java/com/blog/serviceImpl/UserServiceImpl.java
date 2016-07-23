@@ -3,6 +3,7 @@ package com.blog.serviceImpl;
 import com.blog.dao.UserDao;
 import com.blog.model.User;
 import com.blog.service.UserService;
+import com.blog.util.MD5;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +34,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public void saveUser(User user) throws Exception {
+        user.setPassword(MD5.lock(user));
         userDao.insertUser(user);
     }
 
@@ -41,10 +43,16 @@ public class UserServiceImpl implements UserService{
         if (user.getUsername()!= null && user.getUsername()!= " "){
             User user1 = userDao.findUserByName(user.getUsername());
             if (user1!=null){
-                if (user1.getPassword().equals(user.getPassword())){
+                //数据库中的用户密码（加密），故输入的密码也进行加密
+                String password_input = MD5.unlock(user,user1.getSalt());
+                System.out.println(password_input);
+                if (user1.getPassword().equals(password_input)){
                     return true;
                 }
             }
+        }
+        else {
+            throw new Exception("用户输入为空");
         }
         return false;
     }
