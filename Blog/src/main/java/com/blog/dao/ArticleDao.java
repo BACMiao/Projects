@@ -16,6 +16,7 @@ public interface ArticleDao {
     public List<ArticleCustom> findArticleByTitle(String title) throws Exception;
     public List<Article> findArticleByList(Article article) throws Exception;
     public List<ArticleCustom> findAllArticle() throws Exception;
+    public List<ArticleCustom> findArticleByCid(int cid) throws Exception;
     public void insertArticle(Article article) throws Exception;
     public void deleteArticleById(int id) throws  Exception;
     public void updateArticleById(Article article) throws Exception;

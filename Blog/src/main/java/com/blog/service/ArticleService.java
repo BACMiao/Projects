@@ -17,4 +17,5 @@ public interface ArticleService {
     public List<ArticleCustom> selectAllArticle()throws Exception;
     public Article selectArticleById(Integer id) throws Exception;
     public List<ArticleCustom> selectArticleByTitle(String title) throws Exception;
+    public List<ArticleCustom> selectArticleByCid(Integer cid) throws Exception;
 }

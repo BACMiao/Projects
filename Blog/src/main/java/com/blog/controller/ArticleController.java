@@ -79,4 +79,22 @@ public class ArticleController {
         model.addAttribute("articleCustoms", articleCustoms);
         return "article/findArticle";
     }
+
+    @RequestMapping(value = "/findAllArticle", produces = "text/html;charset=UTF-8")
+    public @ResponseBody String findAllArticle() throws Exception {
+        List<ArticleCustom> articles = articleService.selectAllArticle();
+        JSONObject articleMsg = new JSONObject();
+        articleMsg.put("articles", articles);
+        System.out.println(articleMsg.toString());
+        return articleMsg.toString();
+    }
+
+    @RequestMapping(value = "/findArticleByCid")
+    public String findArticleByCid(@RequestParam(value = "cid", required = true) int cid,
+                                   Model model) throws Exception {
+        List<ArticleCustom> articlesByCid = articleService.selectArticleByCid(cid);
+        System.out.println(articlesByCid);
+        model.addAttribute("articlesByCid", articlesByCid);
+        return null;
+    }
 }

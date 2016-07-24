@@ -22,6 +22,12 @@
         WHERE title LIKE '%${value}%' AND article.categoryId=category.cid
     </select>
 
+    <select id="findArticleByCid" parameterType="int" resultType="com.blog.model.ArticleCustom">
+        SELECT article.*, category.categoryName
+        FROM article INNER JOIN category
+        WHERE categoryId=#{cid} AND article.categoryId=category.cid
+    </select>
+
     <insert id="insertArticle" parameterType="com.blog.model.Article">
         <selectKey keyProperty="id" order="AFTER" resultType="int">
             SELECT LAST_INSERT_ID()

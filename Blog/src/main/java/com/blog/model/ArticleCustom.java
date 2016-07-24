@@ -1,6 +1,7 @@
 package com.blog.model;
 
 /**
+ *
  * Created by Black on 2016/6/11.
  */
 public class ArticleCustom extends Article {

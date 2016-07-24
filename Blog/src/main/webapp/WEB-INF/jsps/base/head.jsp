@@ -10,7 +10,7 @@
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
     <title>head</title>
-    <link href="${ctx}/resources/css/head.css" rel="stylesheet" type="text/css"/>
+    <%--<link href="${ctx}/resources/css/head.css" rel="stylesheet" type="text/css"/>--%>
     <link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -20,20 +20,7 @@
                 <li><a href="/" class="dh"><i class="icon-home icon-white"></i>&nbsp;本站</a></li>
                 <li class="dropdown">
                         <a class="dropdown-toggle dh" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html"><i class="icon-list icon-white"></i>&nbsp;类别</a>
-                        <ul class="dropdown-menu dropdown-menu-right" role="menu"  aria-labelledby="dLabel">
-                            <li class="dropdown-submenu dropdown-menu-right">
-                                <a tabindex="-1" href="#">Action</a>
-                                <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" href="#">Another action</a></li>
-                                    <li><a tabindex="-1" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a tabindex="-1" href="#">Another action</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a tabindex="-1" href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a tabindex="-1" href="#">Separated link</a></li>
+                        <ul id="dropdown" class="dropdown-menu dropdown-menu-right" role="menu"  aria-labelledby="dLabel">
                         </ul>
                 </li>
                 <li><a href="#" class="dh userLogin">您还未登陆！</a></li>
@@ -48,7 +35,7 @@
             <div id="editDiv"></div>
 
         </div>
-        <h1>Black apocalypse</h1>
+        <%--<h1>Black apocalypse</h1>--%>
     </div>
 
 
@@ -65,7 +52,7 @@
             $('.dropdown-toggle').dropdown();
         });
 
-        $(document).ready(function(){
+        $(function(){
             var loginUsername="<%=session.getAttribute("loginUsername")%>";
             if (loginUsername=='null'){
                 $(".edit").hide();
@@ -78,6 +65,20 @@
         $(function(){
             $("#editUser").click(function(){
                 $('#editDiv').load('/user/editUser?username=${sessionScope.loginUsername}');
+            });
+        });
+
+        $(function(){
+            url = "/category/findAllCategory";
+            $("#dLabel").click(function(){
+                $.getJSON(url,function(category){
+                    var html = '<li><a tabindex="-1" href="/article/findArticleByCid?cid='+ category.categories[0].cid +'">'+ category.categories[0].categoryName+'('+ category.categories[0].number +')</a></li><li role="presentation" class="divider"></li>';
+                    for(var i=1; i<category.categories.length; i++){
+                        html += '<li><a tabindex="-1" href="/article/findArticleByCid?cid='+ category.categories[0].cid +'">'+ category.categories[i].categoryName+'('+ category.categories[i].number +')</a></li><li role="presentation" class="divider"></li>';
+                    }
+                    html += '<li class="disabled"><a tabindex="-1" href="#">括号内的数字为文章数</a></li>';
+                    $("#dropdown").html(html);
+                });
             });
         });
 

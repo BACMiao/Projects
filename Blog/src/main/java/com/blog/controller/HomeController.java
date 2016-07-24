@@ -31,4 +31,8 @@ public class HomeController {
         return "index";
     }
 
+    @RequestMapping("/head")
+    public String head() throws Exception{
+        return "base/head";
+    }
 }
