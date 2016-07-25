@@ -38,6 +38,6 @@ public class CategoryController {
         JSONObject categoryMsg = new JSONObject();
         categoryMsg.put("categories", categories);
         System.out.println(categoryMsg.toString());
-        return categoryMsg.toString();
+        return categoryMsg.toJSONString();
     }
 }

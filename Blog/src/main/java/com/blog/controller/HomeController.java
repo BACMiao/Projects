@@ -30,9 +30,4 @@ public class HomeController {
         model.addAttribute("category", categories);
         return "index";
     }
-
-    @RequestMapping("/head")
-    public String head() throws Exception{
-        return "base/head";
-    }
 }

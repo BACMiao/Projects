@@ -1,5 +1,6 @@
 package com.blog.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.blog.model.User;
 import com.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 
@@ -39,14 +41,20 @@ public class UserController {
         return "user/userLogin";
     }
 
-    @RequestMapping("/exist")
-    public String existUser(User user, HttpSession session) throws Exception{
-        if (userService.existUser(user)){
+    @RequestMapping(value = "/exist", produces = "text/html;charset=UTF-8")
+    public @ResponseBody String existUser(User user, HttpSession session) throws Exception{
+        JSONObject userLogin = new JSONObject();
+        boolean result = userService.existUser(user);
+        userLogin.put("result", result);
+        if (result){
             user = userService.findUserByName(user.getUsername());
-            session.setAttribute("loginUsername", user.getUsername());
-            return "redirect:/";
+            userLogin.put("loginUsername", user.getUsername());
+            System.out.println(userLogin.toJSONString());
+//            session.setAttribute("loginUsername", user.getUsername());
+            return userLogin.toJSONString();
         }else {
-            return "user/failure";
+            System.out.println(userLogin.toJSONString());
+            return userLogin.toJSONString();
         }
     }
 

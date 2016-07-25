@@ -16,9 +16,7 @@
 <body>
 <div id="wrapper">
     <div id="header">
-        <div id="logo">
-            <a href="/category/add">添加类别</a>
-            <a href="/article/add">添加文章</a></div>
+        <div id="logo"></div>
         <div id="title">后台管理系统</div>
         <div id="user_info">
             <div id="welcome">欢迎${sessionScope.adminName}使用本系统</div>

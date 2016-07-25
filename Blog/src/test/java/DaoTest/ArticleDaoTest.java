@@ -1,6 +1,6 @@
-package ServiceTest;
+package DaoTest;
 
-import com.blog.model.Article;
+import com.blog.dao.ArticleDao;
 import com.blog.model.ArticleCustom;
 import com.blog.service.ArticleService;
 import org.junit.After;
@@ -16,22 +16,22 @@ import java.util.List;
  *
  * Created by Black on 2016/7/24.
  */
-public class ArticleServiceTest extends BaseJunit4Test {
+public class ArticleDaoTest extends BaseJunit4Test {
     @Autowired
-    private ArticleService articleService;
+    private ArticleDao articleDao;
 
     @Before
     public void before() throws Exception {
     }
     @Test
     public void testInjections(){
-       Assert.assertNotNull(articleService);
+       Assert.assertNotNull(articleDao);
     }
 
     @Test
     public void testSelectArticleByCid() throws Exception {
-        List<ArticleCustom> articles = articleService.selectArticleByCid(1);
-        for (ArticleCustom ac : articles){
+        List<ArticleCustom> articleCustoms = articleDao.findArticleByCid(1);
+        for (ArticleCustom ac : articleCustoms){
             System.out.println(ac.getCategoryName());
             System.out.println(ac);
         }

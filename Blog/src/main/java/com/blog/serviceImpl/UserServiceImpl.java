@@ -45,14 +45,10 @@ public class UserServiceImpl implements UserService{
             if (user1!=null){
                 //数据库中的用户密码（加密），故输入的密码也进行加密
                 String password_input = MD5.unlock(user,user1.getSalt());
-                System.out.println(password_input);
                 if (user1.getPassword().equals(password_input)){
                     return true;
                 }
             }
-        }
-        else {
-            throw new Exception("用户输入为空");
         }
         return false;
     }

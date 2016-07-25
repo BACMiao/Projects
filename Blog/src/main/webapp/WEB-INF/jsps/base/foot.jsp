@@ -15,7 +15,7 @@
 </head>
 <body>
     <div id="footer">
-        <p>声明：本博客所有文章版权属于<a href="/admin/login" style="text-decoration: none;color: black">作者</a>。没有作者许可不得转载，若作者同意转载，必须以超链接形式标明文章原始出处和作者。</p>
+        <p>声明：本博客所有文章版权属于<a href="/admin/login" style="text-decoration: none;color: black; cursor:default">作者</a>。没有作者许可不得转载，若作者同意转载，必须以超链接形式标明文章原始出处和作者。</p>
     </div>
 </body>
 </html>

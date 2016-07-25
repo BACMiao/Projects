@@ -30,6 +30,10 @@
                         <div class="form-group">
                             <input type="password" class="form-control input-lg" name="password" style="height:40px; width: 360px; font-size: large" placeholder="登录密码"/>
                         </div>
+                        <div class="alert alert-error alert-dismissable" role="alert">
+                            <button class="close" type="button" data-dismiss="alert">&times;</button>
+                            用户名/密码错误！
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-primary btn-lg btn-block" style="width: 360px; height: 50px; font-size: large" type="submit">立刻登录</button>

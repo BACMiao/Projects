@@ -15,7 +15,7 @@
     <link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<form action="/user/saveUser" method="post">
+<form action="/user/saveUser" id="userRegister" method="post">
     <div id="registerModal" class="modal show text-center">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -24,16 +24,16 @@
                     <h2 class="text-primary">注册</h2>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
+                    <div class="control-group">
                         <input type="text" class="form-control input-lg required" name="username" style="height:40px; width: 360px; font-size: large" placeholder="新用户名" >
                     </div>
-                    <div class="form-group">
+                    <div class="control-group">
                         <input type="password" class="form-control input-lg required" name="password" style="height:40px; width: 360px; font-size: large" placeholder="密码"/>
                     </div>
-                    <div class="form-group">
+                    <div class="control-group">
                         <input type="password" class="form-control input-lg required" name="password2" style="height:40px; width: 360px; font-size: large" placeholder="确认密码"/>
                     </div>
-                    <div class="form-group">
+                    <div class="control-group">
                         <input type="text" class="form-control input-lg required" name="email" style="height:40px; width: 360px; font-size: large" placeholder="邮箱"/>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
 
 <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
 <script src="${ctx}/resources/js/bootstrap.min.js"></script>
-
+<script src="${ctx}/resources/js/jquery.validate.js"></script>
 <script type="text/javascript">
     $('#registerModal').modal({backdrop: 'static', keyboard: false}).css({
         width: 'auto',
@@ -57,24 +57,59 @@
     });
 
     $(function(){
-        $("#sub").bind("click", function(event){
-            var username = $("#username").val();
-            var password = $("#password").val();
-            if (username==""){
-                $("#usernamemsg").html("<p style='color: red'>用户名不能为空</p>");
-                event.preventDefault();
-            }
+        $.validator.addMethod(
+                "passwordConf",
+                function(){
 
-            if (password==""){
-                $("#passwordmsg").html("<p style='color: red'>密码不能为空</p>");
-                event.preventDefault();
-            }
-        });
+                }
 
-        $("form :input.required").each(function(){
-            var $required = $("<strong class='high' style='color: #FF0000'>*</strong>");
-            $(this).parent().append($required);
-        });
+        );
+        $("#userRegister").validate({
+            rules : {
+                username : {
+                    required : true,
+                    minlength:5,
+                    maxlength:10
+                },
+                password : {
+                    required : true,
+                    minlength:6,
+                    maxlength:15
+                },
+                password2 : {
+                    required : true
+                },
+                email : {
+                    required : true
+                },
+            },
+            messages : {
+                username : {
+                    required :'<div class="alert alert-danger" role="alert">请输入用户名</div>',
+                    minlength:'<div class="alert alert-warning" role="alert">用户名不少于5个字符</div>',
+                    maxlength:'<div class="alert alert-warning" role="alert">用户名不大于10个字符</div>'
+                },
+                password : {
+                    required :'<div class="alert alert-danger" role="alert">请输入密码</div>',
+                    minlength:'<div class="alert alert-warning" role="alert">密码不少于6位</div>',
+                    maxlength:'<div class="alert alert-warning" role="alert">密码不多于15位</div>',
+                },
+                password2 : {
+                    required : "Password2 is required."
+                },
+                email : {
+                    required :'<div class="alert alert-danger" role="alert">请输入邮箱</div>'
+                }
+            },
+            highlight : function(element) {
+                $(element).closest('.control-group').addClass('error');
+            },
+
+            success : function(element) {
+                $(element).closest('.control-group').removeClass('error').addClass('success');
+            },
+
+        })
     });
 
 </script>

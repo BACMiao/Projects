@@ -86,15 +86,14 @@ public class ArticleController {
         JSONObject articleMsg = new JSONObject();
         articleMsg.put("articles", articles);
         System.out.println(articleMsg.toString());
-        return articleMsg.toString();
+        return articleMsg.toJSONString();
     }
 
     @RequestMapping(value = "/findArticleByCid")
     public String findArticleByCid(@RequestParam(value = "cid", required = true) int cid,
                                    Model model) throws Exception {
         List<ArticleCustom> articlesByCid = articleService.selectArticleByCid(cid);
-        System.out.println(articlesByCid);
         model.addAttribute("articlesByCid", articlesByCid);
-        return null;
+        return "article/findArticleByCid";
     }
 }
