@@ -1,7 +1,7 @@
 package com.blog.util;
 
 import com.blog.model.User;
-import org.apache.shiro.crypto.SecureRandomNumberGenerator;
+
 import org.apache.shiro.crypto.hash.SimpleHash;
 
 /**

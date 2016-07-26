@@ -28,7 +28,7 @@
                         <input type="text" class="form-control input-lg required" name="username" style="height:40px; width: 360px; font-size: large" placeholder="新用户名" >
                     </div>
                     <div class="control-group">
-                        <input type="password" class="form-control input-lg required" name="password" style="height:40px; width: 360px; font-size: large" placeholder="密码"/>
+                        <input type="password" class="form-control input-lg required" name="password" id="password" style="height:40px; width: 360px; font-size: large" placeholder="密码"/>
                     </div>
                     <div class="control-group">
                         <input type="password" class="form-control input-lg required" name="password2" style="height:40px; width: 360px; font-size: large" placeholder="确认密码"/>
@@ -57,14 +57,6 @@
     });
 
     $(function(){
-        $.validator.addMethod(
-                "passwordConf",
-                function(value, element, param){
-                    alert(value);
-                    return value == param;
-                },'两次密码不同'
-
-        );
         $("#userRegister").validate({
             rules : {
                 username : {
@@ -79,6 +71,7 @@
                 },
                 password2 : {
                     required : true,
+                    equalTo: "#password"
                 },
                 email : {
                     required : true
@@ -93,10 +86,11 @@
                 password : {
                     required :'<div class="alert alert-danger" role="alert">请输入密码</div>',
                     minlength:'<div class="alert alert-warning" role="alert">密码不少于6位</div>',
-                    maxlength:'<div class="alert alert-warning" role="alert">密码不多于15位</div>',
+                    maxlength:'<div class="alert alert-warning" role="alert">密码不多于15位</div>'
                 },
                 password2 : {
-                    required : "Password2 is required.",
+                    required :'<div class="alert alert-danger" role="alert">请确认密码</div>',
+                    equalTo : '<div class="alert alert-danger" role="alert">两次密码输入不一致</div>'
                 },
                 email : {
                     required :'<div class="alert alert-danger" role="alert">请输入邮箱</div>'

@@ -52,12 +52,9 @@ public class UserController {
         userLogin.put("result", result);
         if (result){
             user = userService.findUserByName(user.getUsername());
-            userLogin.put("loginUsername", user.getUsername());
-            System.out.println(userLogin.toJSONString());
-//            session.setAttribute("loginUsername", user.getUsername());
+            session.setAttribute("loginUsername", user.getUsername());
             return userLogin.toJSONString();
         }else {
-            System.out.println(userLogin.toJSONString());
             return userLogin.toJSONString();
         }
     }

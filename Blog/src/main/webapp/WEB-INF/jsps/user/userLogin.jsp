@@ -15,7 +15,7 @@
     <link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<form action="/user/exist" method="post">
+<form action="#" id="loginUser" method="post">
         <div id="loginModal" class="modal show text-center">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -24,15 +24,11 @@
                         <h3 class="text-primary">登录</h3>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group">
-                            <input type="text" class="form-control input-lg" name="username" style="height:40px; width: 360px; font-size: large" placeholder="用户名" />
+                        <div class="control-group">
+                            <input type="text" class="form-control input-lg" name="username" id="username" style="height:40px; width: 360px; font-size: large" placeholder="用户名" />
                         </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control input-lg" name="password" style="height:40px; width: 360px; font-size: large" placeholder="登录密码"/>
-                        </div>
-                        <div class="alert alert-error alert-dismissable" role="alert">
-                            <button class="close" type="button" data-dismiss="alert">&times;</button>
-                            用户名/密码错误！
+                        <div class="control-group">
+                            <input type="password" class="form-control input-lg" name="password" id="password" style="height:40px; width: 360px; font-size: large" placeholder="登录密码"/>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -46,6 +42,7 @@
 
 <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
 <script src="${ctx}/resources/js/bootstrap.js"></script>
+<script src="${ctx}/resources/js/jquery.validate.js"></script>
 
 <script type="text/javascript">
     $('#loginModal').modal({backdrop: 'static', keyboard: false}).css({
@@ -54,6 +51,48 @@
             return -($(this).width() / 2);
         }
     });
+
+    $(function(){
+        $("#loginUser").validate({
+            rules:{
+                username:{
+                    required:true,
+                },
+                password:{
+                    required:true,
+                },
+            },
+            messages:{
+                username : {
+                    required :'<div class="alert alert-danger" role="alert">请输入用户名</div>',
+                },
+                password : {
+                    required :'<div class="alert alert-danger" role="alert">请输入密码</div>',
+                }
+            },
+            highlight : function(element) {
+                $(element).closest('.control-group').addClass('error');
+            },
+            success : function(element) {
+                $(element).closest('.control-group').removeClass('error');
+            }
+        })
+    });
+
+    $(function(){
+        $("button").click(function(){
+            $.getJSON("/user/exist",
+                    { username : $("#username").val(), password : $("#password").val()},
+                    function(json){
+                        if(json.result){
+                            alert("正确");
+                        }else {
+                            alert("错误");
+                        }
+                    });
+            });
+    });
+
 </script>
 </body>
 </html>
