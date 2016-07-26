@@ -59,9 +59,10 @@
     $(function(){
         $.validator.addMethod(
                 "passwordConf",
-                function(){
-
-                }
+                function(value, element, param){
+                    alert(value);
+                    return value == param;
+                },'两次密码不同'
 
         );
         $("#userRegister").validate({
@@ -77,7 +78,7 @@
                     maxlength:15
                 },
                 password2 : {
-                    required : true
+                    required : true,
                 },
                 email : {
                     required : true
@@ -95,7 +96,7 @@
                     maxlength:'<div class="alert alert-warning" role="alert">密码不多于15位</div>',
                 },
                 password2 : {
-                    required : "Password2 is required."
+                    required : "Password2 is required.",
                 },
                 email : {
                     required :'<div class="alert alert-danger" role="alert">请输入邮箱</div>'

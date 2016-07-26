@@ -2,6 +2,7 @@ package shiroTest;
 
 import com.blog.dao.UserDao;
 import com.blog.model.User;
+import com.blog.util.MD5;
 import org.apache.shiro.codec.Hex;
 import org.apache.shiro.crypto.AesCipherService;
 import org.apache.shiro.crypto.RandomNumberGenerator;
@@ -56,16 +57,9 @@ public class passwordTest extends BaseJunit4Test{
     }
     @Test
     public void MD5() throws Exception {
-        String algorithmName = "md5";
         User user = userDao.findUserById(1);
-        String username = user.getUsername();
-        String password = user.getPassword();
-        String salt1 = username;
-        String salt2 = new SecureRandomNumberGenerator().nextBytes().toHex();
-        int hashIterations = 2;
-        SimpleHash hash = new SimpleHash(algorithmName, password, salt1 + salt2, hashIterations);
-        String encodedPassword = hash.toHex();
-        System.out.println(encodedPassword);
+        String password_md5 = MD5.lock(user);
+        System.out.println(password_md5);
     }
 
     @After

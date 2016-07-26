@@ -32,6 +32,8 @@ public class UserController {
 
     @RequestMapping("/saveUser")
     public String saveUser(User user)throws Exception{
+        //验证码
+        //..
         userService.saveUser(user);
         return "user/success";
     }
@@ -43,6 +45,8 @@ public class UserController {
 
     @RequestMapping(value = "/exist", produces = "text/html;charset=UTF-8")
     public @ResponseBody String existUser(User user, HttpSession session) throws Exception{
+        //验证码
+        //..
         JSONObject userLogin = new JSONObject();
         boolean result = userService.existUser(user);
         userLogin.put("result", result);
