@@ -15,7 +15,7 @@
     <link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<form action="#" id="loginUser" method="post">
+<form action="#" id="userLogin" method="post">
         <div id="loginModal" class="modal show text-center">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -53,7 +53,7 @@
     });
 
     $(function(){
-        $("#loginUser").validate({
+        $("#userLogin").validate({
             rules:{
                 username:{
                     required:true,
