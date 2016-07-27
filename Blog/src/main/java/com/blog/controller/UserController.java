@@ -60,6 +60,7 @@ public class UserController {
         }
     }
 
+
     @RequestMapping("/editUser")
     public String editUser(@RequestParam(value = "username", required = true) String username, Model model) throws Exception{
         User user = userService.findUserByName(username);

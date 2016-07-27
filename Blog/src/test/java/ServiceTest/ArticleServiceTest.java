@@ -1,6 +1,5 @@
 package ServiceTest;
 
-import com.blog.model.Article;
 import com.blog.model.ArticleCustom;
 import com.blog.service.ArticleService;
 import org.junit.After;
@@ -8,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import shiroTest.BaseJunit4Test;
+import DaoTest.BaseJunit4Test;
 
 import java.util.List;
 

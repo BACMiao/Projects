@@ -1,4 +1,4 @@
-package shiroTest;
+package DaoTest;
 
 import org.junit.runner.RunWith;
 import org.springframework.test.annotation.Rollback;

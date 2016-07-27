@@ -10,7 +10,7 @@
     <!--加载sping容器 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring-mybatis.xml;classpath:spring.xml</param-value>
+        <param-value>classpath:spring-mybatis.xml;classpath:spring.xml;</param-value>
     </context-param>
     <!--springmvc的前端控制器 -->
     <servlet>

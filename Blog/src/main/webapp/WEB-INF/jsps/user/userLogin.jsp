@@ -79,19 +79,19 @@
         })
     });
 
-    $(function(){
-        $("button").click(function(){
-            $.getJSON("/user/exist",
-                    { username : $("#username").val(), password : $("#password").val()},
-                    function(json){
-                        if(json.result){
-                            alert("正确");
-                        }else {
-                            alert("错误");
-                        }
-                    });
-            });
-    });
+//    $(function(){
+//        $("button").click(function(){
+//            $.getJSON("/user/exist",
+//                    { username : $("#username").val(), password : $("#password").val()},
+//                    function(json){
+//                        if(json.result){
+//                            alert("正确");
+//                        }else {
+//                            alert("错误");
+//                        }
+//                    });
+//            });
+//    });
 
 </script>
 </body>
