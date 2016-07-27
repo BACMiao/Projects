@@ -41,7 +41,7 @@
 </form>
 
 <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
-<script src="${ctx}/resources/js/bootstrap.js"></script>
+<script src="${ctx}/resources/js/bootstrap.min.js"></script>
 <script src="${ctx}/resources/js/jquery.validate.js"></script>
 
 <script type="text/javascript">
@@ -79,19 +79,19 @@
         })
     });
 
-//    $(function(){
-//        $("button").click(function(){
-//            $.getJSON("/user/exist",
-//                    { username : $("#username").val(), password : $("#password").val()},
-//                    function(json){
-//                        if(json.result){
-//                            alert("正确");
-//                        }else {
-//                            alert("错误");
-//                        }
-//                    });
-//            });
-//    });
+    $(function(){
+        $("button").click(function(){
+            $.getJSON("/user/exist",
+                    { username : $("#username").val(), password : $("#password").val()},
+                    function(json){
+                        if(json.result){
+                            alert("正确");
+                        }else {
+                            alert("错误");
+                        }
+                    });
+            });
+    });
 
 </script>
 </body>

@@ -32,8 +32,8 @@
         <img src="http://7xv9yx.com1.z0.glb.clouddn.com/bapocalypseHead.png">
     </div>
 
-<script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
-<script src="${ctx}/resources/js/bootstrap.js"></script>
+    <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
+    <script src="${ctx}/resources/js/bootstrap.min.js"></script>
 
 <script>
     $(function(){

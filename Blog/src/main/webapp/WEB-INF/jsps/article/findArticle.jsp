@@ -10,11 +10,9 @@
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
     <title>findArticle</title>
-    <link href="${ctx}/resources/css/base.css" rel="stylesheet" type="text/css"/>
     <link href="${ctx}/resources/css/main.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div id="background">
     <div id="main">
         <jsp:include page="../base/head.jsp"/>
         <jsp:include page="../base/search.jsp"/>
@@ -77,7 +75,6 @@
         <jsp:include page="../base/tooltip.jsp"/>
         <jsp:include page="../base/foot.jsp"/>
     </div>
-</div>
 
     <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
     <script src="${ctx}/resources/js/bootstrap.js"></script>

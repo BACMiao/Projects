@@ -40,7 +40,7 @@
 
 
     <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
-    <script src="${ctx}/resources/js/bootstrap.js"></script>
+    <script src="${ctx}/resources/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(function(){
             $("#register").click(function(){

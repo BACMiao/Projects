@@ -16,5 +16,34 @@
 }
 
 #main #article #discuss{
-    margin: 20px 50px 10px 50px;
+    font-size: 16px;
+    margin: 10px 50px 3px 50px;
+    word-wrap: break-word;
+    word-break: normal;
 }
+
+#main #article #discuss h4{
+    background-color: #7eb4d1;
+}
+
+#main #article #discuss h5{
+    background-color: #84dfeb;
+}
+
+#main #article #discuss textarea{
+    font-size: 16px;
+    margin: 5px 10px 10px 10px;
+    height: 200px;
+    width: 730px;
+}
+
+#main #article #discuss .button{
+    margin: 0px 20px 10px 0px;
+    float: right;
+}
+
+#main #article #discuss #reply{
+    margin: 5px 70px 5px 70px;
+}
+
+

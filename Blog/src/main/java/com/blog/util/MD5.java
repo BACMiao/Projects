@@ -15,8 +15,8 @@ public class MD5 {
 
     public static String lock(User user){
         String algorithmName = "md5";
-        String username = "陈淼";
-        String password = "111111";
+        String username = user.getUsername();
+        String password = user.getPassword();
         String salt1 = username;
         String salt2 = new SecureRandomNumberGenerator().nextBytes().toHex();
         user.setSalt(salt2);
