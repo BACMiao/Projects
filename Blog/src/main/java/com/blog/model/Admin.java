@@ -9,6 +9,7 @@ public class Admin {
     private String username;
     private String password;
 
+
     public int getAid() {
         return aid;
     }
@@ -31,14 +32,5 @@ public class Admin {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    @Override
-    public String toString() {
-        return "Admin{" +
-                "aid=" + aid +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
     }
 }

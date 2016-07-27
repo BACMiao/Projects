@@ -15,30 +15,33 @@
     <link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<form action="#" id="userLogin" method="post">
-        <div id="loginModal" class="modal show text-center">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                        <h3 class="text-primary">登录</h3>
-                    </div>
-                    <div class="modal-body">
-                        <div class="control-group">
-                            <input type="text" class="form-control input-lg" name="username" id="username" style="height:40px; width: 360px; font-size: large" placeholder="用户名" />
-                        </div>
-                        <div class="control-group">
-                            <input type="password" class="form-control input-lg" name="password" id="password" style="height:40px; width: 360px; font-size: large" placeholder="登录密码"/>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary btn-lg btn-block" style="width: 360px; height: 50px; font-size: large" type="submit">立刻登录</button>
-                        <span><a href="#">找回密码</a></span>
+    <div id="loginModal" class="modal show text-center">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="text-primary">登录</h2>
+                </div>
+                <div class="modal-body">
+                    <div id="login">
+                        <form action="#" id="userLogin" method="post">
+                            <div class="control-group">
+                                <input type="text" class="form-control input-lg" name="username" id="username" style="height:40px; width: 360px; font-size: large" placeholder="用户名" />
+                            </div>
+                            <div class="control-group">
+                                <input type="password" class="form-control input-lg" name="password" id="password" style="height:40px; width: 360px; font-size: large" placeholder="登录密码"/>
+                            </div>
+                            <div id="error"></div>
+                            <div class="control-group">
+                                <button id="loginButton" class="btn btn-primary btn-lg btn-block" style="width: 360px; height: 50px; font-size: large" type="submit">立刻登录</button>
+                                <span><a href="#">找回密码</a></span>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-</form>
+    </div>
 
 <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
 <script src="${ctx}/resources/js/bootstrap.min.js"></script>
@@ -80,14 +83,13 @@
     });
 
     $(function(){
-        $("button").click(function(){
+        $("#loginButton").click(function(){
             $.getJSON("/user/exist",
                     { username : $("#username").val(), password : $("#password").val()},
                     function(json){
-                        if(json.result){
-                            alert("正确");
-                        }else {
-                            alert("错误");
+                        if(!json.result){
+                            $("#error").html('<div class="alert alert-danger" role="alert">用户名/密码错误</div>').show();
+                            alert("操作失败！");
                         }
                     });
             });

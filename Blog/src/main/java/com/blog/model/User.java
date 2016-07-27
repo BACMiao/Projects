@@ -11,6 +11,7 @@ public class User implements Serializable{
     private String password;
     private String email;
     private String salt;
+    private String power;
 
     public int getUid() {
         return uid;
@@ -52,4 +53,11 @@ public class User implements Serializable{
         this.salt = salt;
     }
 
+    public String getPower() {
+        return power;
+    }
+
+    public void setPower(String power) {
+        this.power = power;
+    }
 }

@@ -15,7 +15,6 @@
     <link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<form action="/user/saveUser" id="userRegister" method="post">
     <div id="registerModal" class="modal show text-center">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -24,26 +23,27 @@
                     <h2 class="text-primary">注册</h2>
                 </div>
                 <div class="modal-body">
-                    <div class="control-group">
-                        <input type="text" class="form-control input-lg required" name="username" style="height:40px; width: 360px; font-size: large" placeholder="新用户名" >
-                    </div>
-                    <div class="control-group">
-                        <input type="password" class="form-control input-lg required" name="password" id="password" style="height:40px; width: 360px; font-size: large" placeholder="密码"/>
-                    </div>
-                    <div class="control-group">
-                        <input type="password" class="form-control input-lg required" name="password2" style="height:40px; width: 360px; font-size: large" placeholder="确认密码"/>
-                    </div>
-                    <div class="control-group">
-                        <input type="text" class="form-control input-lg required" name="email" style="height:40px; width: 360px; font-size: large" placeholder="邮箱"/>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary btn-lg btn-block" style="width: 360px; height: 50px; font-size: large" type="submit">注册完毕</button>
+                    <form action="/user/saveUser" id="userRegister" method="post">
+                        <div class="control-group">
+                            <input type="text" class="form-control input-lg required" name="username" style="height:40px; width: 360px; font-size: large" placeholder="新用户名" >
+                        </div>
+                        <div class="control-group">
+                            <input type="password" class="form-control input-lg required" name="password" id="password" style="height:40px; width: 360px; font-size: large" placeholder="密码"/>
+                        </div>
+                        <div class="control-group">
+                            <input type="password" class="form-control input-lg required" name="password2" style="height:40px; width: 360px; font-size: large" placeholder="确认密码"/>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control input-lg required" name="email" style="height:40px; width: 360px; font-size: large" placeholder="邮箱"/>
+                        </div>
+                        <div class="control-group">
+                            <button class="btn btn-primary btn-lg btn-block" style="width: 360px; height: 50px; font-size: large" type="submit">注册完毕</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-</form>
 
 <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
 <script src="${ctx}/resources/js/bootstrap.min.js"></script>

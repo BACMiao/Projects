@@ -10,7 +10,7 @@
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
     <title>head</title>
-    <link href="${ctx}/resources/css/head.css" rel="stylesheet" type="text/css"/>
+    <%--<link href="${ctx}/resources/css/head.css" rel="stylesheet" type="text/css"/>--%>
     <link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>

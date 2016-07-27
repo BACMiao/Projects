@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -45,14 +46,15 @@ public class UserController {
 
     @RequestMapping(value = "/exist", produces = "text/html;charset=UTF-8")
     public @ResponseBody String existUser(User user, HttpSession session) throws Exception{
-        //验证码
-        //..
         JSONObject userLogin = new JSONObject();
         boolean result = userService.existUser(user);
         userLogin.put("result", result);
         if (result){
             user = userService.findUserByName(user.getUsername());
             session.setAttribute("loginUsername", user.getUsername());
+            if (user.getPower()!=null&&user.getPassword()!=""){
+                session.setAttribute("power", user.getPower());
+            }
             System.out.println(userLogin.toJSONString());
             return userLogin.toJSONString();
         }else {
@@ -62,11 +64,20 @@ public class UserController {
 
 
     @RequestMapping("/editUser")
-    public String editUser(@RequestParam(value = "username", required = true) String username, Model model) throws Exception{
-        User user = userService.findUserByName(username);
-        model.addAttribute("user", user);
-        System.out.println(user);
-        return "user/editUser";
+    public String editUser(@RequestParam(value = "username", required = true) String username,
+                           Model model, HttpSession session) throws Exception{
+        String loginUsername = (String) session.getAttribute("loginUsername");
+        if (loginUsername != null){
+            if (loginUsername.equals(username)){
+                User user = userService.findUserByName(username);
+                model.addAttribute("user", user);
+                System.out.println(user);
+                return "user/editUser";
+            }else {
+                return "redirect:/";
+            }
+        }
+        return "redirect:/";
     }
 
     @RequestMapping("/updateUser")
@@ -79,6 +90,7 @@ public class UserController {
     public String userLogout(HttpSession session){
         if (session.getAttribute("loginUsername")!=null){
             session.removeAttribute("loginUsername");
+            session.invalidate();
         }
         return "redirect:/";
     }
